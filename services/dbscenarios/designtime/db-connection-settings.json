@@ -1,0 +1,46 @@
+{
+  "username" : "root",
+  "password" : "7b6a43524a322c0c6e6166771a1378700d662158",
+  "url" : "jdbc:mysql://52.12.219.254:3306/dbscenarios?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull",
+  "driverClass" : "com.mysql.jdbc.Driver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
+  "serviceId" : "dbscenarios",
+  "packageName" : "com.javaserviceautowiring.dbscenarios",
+  "dbType" : "MySQL",
+  "host" : "52.12.219.254",
+  "dbName" : "dbscenarios",
+  "port" : "3306",
+  "schemaName" : null,
+  "tableFilter" : [ {
+    "table" : "ALL TYPES",
+    "schema" : null
+  }, {
+    "table" : "AllTypesWithoutSpace",
+    "schema" : null
+  }, {
+    "table" : "BlobTypeIdentifier",
+    "schema" : null
+  }, {
+    "table" : "BLOBTABLE_PROCEDURE",
+    "schema" : null
+  }, {
+    "table" : "BLOBTYPES",
+    "schema" : null
+  } ],
+  "schemaFilter" : [ ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : true,
+    "reason" : "MIGRATION_FAILED",
+    "message" : "Source code re-generation needed with respect to spring upgrade"
+  },
+  "readOnly" : true
+}

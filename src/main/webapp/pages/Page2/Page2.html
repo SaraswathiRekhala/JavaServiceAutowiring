@@ -1,0 +1,89 @@
+<wm-page name="page1" data-ng-controller="Page2PageController" pagetitle="Page 2"> 
+    <wm-header name="header1" content="header"></wm-header> 
+    <wm-top-nav name="top_nav1" content="topnav"></wm-top-nav> 
+    <wm-content name="content1"> 
+        <wm-page-content name="page_content1" columnwidth="12"> 
+            <wm-tabs name="tabs1"> 
+                <wm-tabpane title="All Blob Types" name="tabpane1"> 
+                    <wm-form title="All Blob Types" captionposition="top" name="form1" dataset="bind:Variables.DbscenariosExecuteProcedure_AllBlobsInsert.dataSet" captionalign="left" method="post" errormessage="" enctype="application/x-www-form-urlencoded"> 
+                        <wm-layoutgrid name="layoutgrid1" columns="1"> 
+                            <wm-gridrow name="gridrow1"> 
+                                <wm-gridcolumn name="gridcolumn1" columnwidth="12"> 
+                                    <wm-form-field type="file" readonly="false" widget="upload" displayname="Blobtype1" name="BLOBTYPE1" show="true" key="BLOBTYPE1"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow2"> 
+                                <wm-gridcolumn name="gridcolumn2" columnwidth="12"> 
+                                    <wm-form-field type="file" readonly="false" widget="upload" displayname="Blobtype2" name="BLOBTYPE2" show="true" key="BLOBTYPE2"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow3"> 
+                                <wm-gridcolumn name="gridcolumn3" columnwidth="12"> 
+                                    <wm-form-field type="file" readonly="false" widget="upload" displayname="Blobtype3" name="BLOBTYPE3" show="true" key="BLOBTYPE3"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow4"> 
+                                <wm-gridcolumn name="gridcolumn4" columnwidth="12"> 
+                                    <wm-form-field type="file" readonly="false" widget="upload" displayname="Blobtype4" name="BLOBTYPE4" show="true" key="BLOBTYPE4"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow5"> 
+                                <wm-gridcolumn name="gridcolumn5" columnwidth="12"> 
+                                    <wm-form-field type="file" readonly="false" widget="upload" displayname="Blobtype5" name="BLOBTYPE5" show="true" key="BLOBTYPE5"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow6"> 
+                                <wm-gridcolumn name="gridcolumn6" columnwidth="12"> 
+                                    <wm-form-field type="boolean" readonly="false" widget="checkbox" displayname="Booleancol" name="BOOLEANCOL" show="true" key="BOOLEANCOL"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                        </wm-layoutgrid> 
+                        <wm-buttongroup class="form-action col-md-12" horizontalalign="right" name="buttongroup1"> 
+                            <wm-button class="btn-secondary" type="reset" name="button1" caption="Reset"></wm-button> 
+                            <wm-button class="btn-warning" type="button" name="button2" caption="Cancel"></wm-button> 
+                            <wm-button class="btn-primary" type="submit" name="button3" caption="Save"></wm-button> 
+                        </wm-buttongroup> 
+                    </wm-form> 
+                </wm-tabpane> 
+                <wm-tabpane title="Only Blob" name="tabpane2"> 
+                    <wm-form title="Only Blob" captionposition="top" name="form2" dataset="bind:Variables.DbscenariosExecuteProcedure_SingleBlobInsert.dataSet" captionalign="left" method="post" errormessage="" enctype="application/x-www-form-urlencoded"> 
+                        <wm-layoutgrid name="layoutgrid2" columns="1"> 
+                            <wm-gridrow name="gridrow7"> 
+                                <wm-gridcolumn name="gridcolumn7" columnwidth="12"> 
+                                    <wm-form-field type="file" readonly="false" widget="upload" displayname="Blobcol" name="BLOBCOL" show="true" key="BLOBCOL"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                        </wm-layoutgrid> 
+                        <wm-buttongroup class="form-action col-md-12" horizontalalign="right" name="buttongroup2"> 
+                            <wm-button class="btn-secondary" type="reset" name="button4" caption="Reset"></wm-button> 
+                            <wm-button class="btn-warning" type="button" name="button5" caption="Cancel"></wm-button> 
+                            <wm-button class="btn-primary" type="submit" name="button6" caption="Save"></wm-button> 
+                        </wm-buttongroup> 
+                    </wm-form> 
+                </wm-tabpane> 
+                <wm-tabpane title="IN Blob2" name="tabpane3"> 
+                    <wm-form title="Form" captionposition="top" name="form3" dataset="bind:Variables.DbscenariosExecuteProcedure_InBlob2.dataSet" captionalign="left" method="post" errormessage="" enctype="application/x-www-form-urlencoded"> 
+                        <wm-layoutgrid name="layoutgrid3" columns="1"> 
+                            <wm-gridrow name="gridrow8"> 
+                                <wm-gridcolumn name="gridcolumn8" columnwidth="12"> 
+                                    <wm-form-field type="file" readonly="false" widget="upload" displayname="Blobcol" name="BLOBCOL" show="true" key="BLOBCOL"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow9"> 
+                                <wm-gridcolumn name="gridcolumn9" columnwidth="12"> 
+                                    <wm-form-field type="string" readonly="false" widget="text" displayname="Description" name="DESCRIPTION" show="true" key="DESCRIPTION"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                        </wm-layoutgrid> 
+                        <wm-buttongroup class="form-action col-md-12" horizontalalign="right" name="buttongroup3"> 
+                            <wm-button class="btn-secondary" type="reset" name="button7" caption="Reset"></wm-button> 
+                            <wm-button class="btn-warning" type="button" name="button8" caption="Cancel"></wm-button> 
+                            <wm-button class="btn-primary" type="submit" name="button9" caption="Save"></wm-button> 
+                        </wm-buttongroup> 
+                    </wm-form> 
+                </wm-tabpane> 
+            </wm-tabs> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer name="footer1" content="footer"></wm-footer> 
+</wm-page>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="SV_GetSingleRecord" class="com.javaserviceautowiring.sv_getsinglerecord.SV_GetSingleRecord" type="JavaService" springFile="SV_GetSingleRecord.spring.xml">
+    <dataobjects/>
+</service>

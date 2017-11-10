@@ -1,0 +1,551 @@
+{
+  "Procedure_AllBlobsInsert" : {
+    "procedureString" : "CALL insertAllBlobsOnly(?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "BLOBTYPE1",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BLOBTYPE2",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BLOBTYPE3",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BLOBTYPE4",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BLOBTYPE5",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BOOLEANCOL",
+      "type" : "boolean",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : true,
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  },
+  "Procedure_InBlob2" : {
+    "procedureString" : "CALL inBlob2(?,?)",
+    "parameters" : [ {
+      "name" : "BLOBCOL",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "DESCRIPTION",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "jdfhjhdsjfhkj",
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  },
+  "Procedure_getAllTypesWithAliases_InsertQuery" : {
+    "procedureString" : "CALL getAllTypesWithAliases_InsertQuery(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "BYTECOL",
+      "type" : "byte",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "22",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "SHORTCOL",
+      "type" : "short",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "425",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "INTCOL",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "425",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "LONGCOL",
+      "type" : "long",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "245",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "FLOATCOL",
+      "type" : "float",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "4215.2145",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "DOUBLECOL",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "4215.245",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BIGDECCOL",
+      "type" : "big_decimal",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "245.2415",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BIGINTCOL",
+      "type" : "big_integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "78412",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "CHARCOL",
+      "type" : "character",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "g",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "STRINGCOL",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "dfsgs",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "CLOBCOL",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "fdsf",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "TEXTCOL",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "gdsffds",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "DATECOL",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "2017-06-19",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "TIMECOL",
+      "type" : "time",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "14:31:50",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "DATETIMECOL",
+      "type" : "datetime",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "2017-06-19T14:31:44",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "TIMESTAMPCOL",
+      "type" : "timestamp",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : 1497862898000,
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BOOLEANCOL",
+      "type" : "boolean",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : true,
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BLOBCOL",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  },
+  "Procedure_SingleBlobInsert" : {
+    "procedureString" : "CALL procedure_InBlob(?)",
+    "parameters" : [ {
+      "name" : "BLOBCOL",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  },
+  "Procedure_InsertAndGetQuery" : {
+    "procedureString" : "CALL getAllTypesWithAliases_InsertQuery(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "BYTECOL",
+      "type" : "byte",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "8",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "SHORTCOL",
+      "type" : "short",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "879",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "INTCOL",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "8796",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "LONGCOL",
+      "type" : "long",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "789",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "FLOATCOL",
+      "type" : "float",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "789.789",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "DOUBLECOL",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "879",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BIGDECCOL",
+      "type" : "big_decimal",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "678.987978",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BIGINTCOL",
+      "type" : "big_integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "787",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "CHARCOL",
+      "type" : "character",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "m",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "STRINGCOL",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "retert",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "CLOBCOL",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "ertewrt",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "TEXTCOL",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "reterwt",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "DATECOL",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "2017-06-19",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "TIMECOL",
+      "type" : "time",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "09:32:00",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "DATETIMECOL",
+      "type" : "datetime",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "2017-06-19T09:51:40",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "TIMESTAMPCOL",
+      "type" : "timestamp",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : 1497891103000,
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BOOLEANCOL",
+      "type" : "boolean",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : true,
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BLOBCOL",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  },
+  "Procedure_GetByCurrentDate" : {
+    "procedureString" : "CALL getByCurrentDate(?)",
+    "parameters" : [ {
+      "name" : "datecol",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "2017-06-19",
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  },
+  "Procedure_getAllTypesWithAliases" : {
+    "procedureString" : "CALL getAllTypesWithAliases()",
+    "parameters" : [ ]
+  },
+  "Procedure_getAllTypesWithAliases_InsertQueryWithSysParams" : {
+    "procedureString" : "CALL getAllTypesWithAliases_InsertQuery(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "BYTECOL",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_ID",
+      "testValue" : "21",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "SHORTCOL",
+      "type" : "short",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "212",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "INTCOL",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "12",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "LONGCOL",
+      "type" : "long",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "2415",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "FLOATCOL",
+      "type" : "float",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "245.2145",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "DOUBLECOL",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "4215.87856",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BIGDECCOL",
+      "type" : "big_decimal",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "787219.12985",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BIGINTCOL",
+      "type" : "big_integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "2454",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "CHARCOL",
+      "type" : "character",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "r",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "STRINGCOL",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "fgdfg",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "CLOBCOL",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "fdsgfd",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "TEXTCOL",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "fdgfdg",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "DATECOL",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "DATE",
+      "testValue" : "2017-06-19",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "TIMECOL",
+      "type" : "time",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "TIME",
+      "testValue" : "14:52:07",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "DATETIMECOL",
+      "type" : "datetime",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "DATE_TIME",
+      "testValue" : "2017-06-19T14:53:04",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "TIMESTAMPCOL",
+      "type" : "timestamp",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : 1497864186000,
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BOOLEANCOL",
+      "type" : "boolean",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : true,
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BLOBCOL",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  }
+}

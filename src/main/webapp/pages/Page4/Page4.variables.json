@@ -1,0 +1,25 @@
+{
+  "Db123__ExecuteSV_DefaultValues" : {
+    "_id" : "wm-Db123__ExecuteSV_DefaultValues-wm.ServiceVariable-1497896226451",
+    "name" : "Db123__ExecuteSV_DefaultValues",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.javaserviceautowiring.db123__.models.query.SvDefaultValuesResponse",
+    "service" : "db123__",
+    "operation" : "executeSV_DefaultValues",
+    "operationId" : "QueryExecutionController_executeSV_DefaultValues",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "QueryExecution"
+  }
+}

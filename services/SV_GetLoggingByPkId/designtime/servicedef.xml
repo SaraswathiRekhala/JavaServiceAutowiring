@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="SV_GetLoggingByPkId" class="com.javaserviceautowiring.sv_getloggingbypkid.SV_GetLoggingByPkId" type="JavaService" springFile="SV_GetLoggingByPkId.spring.xml">
+    <dataobjects/>
+</service>

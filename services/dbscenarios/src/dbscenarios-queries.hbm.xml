@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="SV_InsertWithBlob">
+        <![CDATA[
+        insert into `ALL TYPES`(`BYTE COL`,`SHORT COL`,`INT COL`,`FLOAT COL`,`LONG COL`,`DOUBLE COL`,`BIGINT COL`,`BIGDEC COL`,`CHAR COL`,`STRING COL`,`TEXT COL`,`CLOB COL`,`DATE COL`,`TIME COL`,`DATETIME COL`,`TIMESTAMP COL`,`BOOLEAN COL`,`BLOB COL`) values(:BYTECOL,:SHORTCOL,:INTCOL,:FLOATCOL,:LONGCOL,:DOUBLECOL,:BIGINTCOL,:BIGDECCOL,:CHARCOL,:STRINGCOL,:TEXTCOL,:CLOBCOL,:DATECOL,:TIMECOL,:DATETIMECOL,:TIMESTAMPCOL,:BOOLEANCOL,:BLOBCOL)
+        ]]>
+    <query-param name="BYTECOL" type="java.lang.Byte"/>
+    <query-param name="SHORTCOL" type="java.lang.Short"/>
+    <query-param name="INTCOL" type="java.lang.Integer"/>
+    <query-param name="FLOATCOL" type="java.lang.Float"/>
+    <query-param name="LONGCOL" type="java.lang.Long"/>
+    <query-param name="DOUBLECOL" type="java.lang.Double"/>
+    <query-param name="BIGINTCOL" type="java.math.BigInteger"/>
+    <query-param name="BIGDECCOL" type="java.math.BigDecimal"/>
+    <query-param name="CHARCOL" type="java.lang.Character"/>
+    <query-param name="STRINGCOL" type="java.lang.String"/>
+    <query-param name="TEXTCOL" type="java.lang.String"/>
+    <query-param name="CLOBCOL" type="java.lang.String"/>
+    <query-param name="DATECOL" type="java.sql.Date"/>
+    <query-param name="TIMECOL" type="java.sql.Time"/>
+    <query-param name="DATETIMECOL" type="org.joda.time.LocalDateTime"/>
+    <query-param name="TIMESTAMPCOL" type="java.sql.Timestamp"/>
+    <query-param name="BOOLEANCOL" type="java.lang.Boolean"/>
+    <query-param name="BLOBCOL" type="byte[]"/>
+    </sql-query>
+
+    <sql-query name="SV_GetAllTypes">
+        <![CDATA[
+        select * from `ALL TYPES`
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_GetAllTypes__count">
+        <![CDATA[
+        select count(*) from (select * from `ALL TYPES`) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_GetAllTypes__identifier">
+        <![CDATA[
+        select * from (select * from `ALL TYPES`) wmTempTable where `PK ID`=:pkId
+        ]]>
+    <query-param name="pkId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="SV_GetAllTypesSingle">
+        <![CDATA[
+        select * from `ALL TYPES`
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_GetAllTypesSingle__count">
+        <![CDATA[
+        select count(*) from (select * from `ALL TYPES`) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_GetLoggedInIdByPkId">
+        <![CDATA[
+        select * from `ALL TYPES` where `PK ID`=:__SERVER__USER_ID__USER_ID
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_GetLoggedInIdByPkId__count">
+        <![CDATA[
+        select count(*) from (select * from `ALL TYPES` where `PK ID`=:__SERVER__USER_ID__USER_ID) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_InsertQuery">
+        <![CDATA[
+        insert into `ALL TYPES`(`BYTE COL`,`SHORT COL`,`INT COL`,`FLOAT COL`,`LONG COL`,`DOUBLE COL`,`BIGINT COL`,`BIGDEC COL`,`CHAR COL`,`STRING COL`,`TEXT COL`,`CLOB COL`,`DATE COL`,`TIME COL`,`DATETIME COL`,`TIMESTAMP COL`,`BOOLEAN COL`) values(:BYTECOL,:SHORTCOL,:INTCOL,:FLOATCOL,:LONGCOL,:DOUBLECOL,:BIGINTCOL,:BIGDECCOL,:CHARCOL,:STRINGCOL,:TEXTCOL,:CLOBCOL,:DATECOL,:TIMECOL,:DATETIMECOL,:TIMESTAMPCOL,:BOOLEANCOL)
+        ]]>
+    <query-param name="BYTECOL" type="java.lang.Byte"/>
+    <query-param name="SHORTCOL" type="java.lang.Short"/>
+    <query-param name="INTCOL" type="java.lang.Integer"/>
+    <query-param name="FLOATCOL" type="java.lang.Float"/>
+    <query-param name="LONGCOL" type="java.lang.Long"/>
+    <query-param name="DOUBLECOL" type="java.lang.Double"/>
+    <query-param name="BIGINTCOL" type="java.math.BigInteger"/>
+    <query-param name="BIGDECCOL" type="java.math.BigDecimal"/>
+    <query-param name="CHARCOL" type="java.lang.Character"/>
+    <query-param name="STRINGCOL" type="java.lang.String"/>
+    <query-param name="TEXTCOL" type="java.lang.String"/>
+    <query-param name="CLOBCOL" type="java.lang.String"/>
+    <query-param name="DATECOL" type="java.sql.Date"/>
+    <query-param name="TIMECOL" type="java.sql.Time"/>
+    <query-param name="DATETIMECOL" type="org.joda.time.LocalDateTime"/>
+    <query-param name="TIMESTAMPCOL" type="java.sql.Timestamp"/>
+    <query-param name="BOOLEANCOL" type="java.lang.Boolean"/>
+    </sql-query>
+
+    <sql-query name="SV_AllTypesWithoutSpace">
+        <![CDATA[
+        select * from AllTypesWithoutSpace
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_AllTypesWithoutSpace__count">
+        <![CDATA[
+        select count(*) from (select * from AllTypesWithoutSpace) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_AllTypesWithoutSpace__identifier">
+        <![CDATA[
+        select * from (select * from AllTypesWithoutSpace) wmTempTable where `PKID`=:pkid
+        ]]>
+    <query-param name="pkid" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="SV_GetByLoggedInId">
+        <![CDATA[
+        select * from `ALL TYPES` where `BYTE COL`=:__SERVER__USER_ID__USER_ID
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_GetByLoggedInId__count">
+        <![CDATA[
+        select count(*) from (select * from `ALL TYPES` where `BYTE COL`=:__SERVER__USER_ID__USER_ID) wmTempTable
+        ]]>
+    </sql-query>
+</hibernate-mapping>

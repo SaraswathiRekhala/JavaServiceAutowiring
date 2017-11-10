@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="SV_GetByLoggedInId" class="com.javaserviceautowiring.sv_getbyloggedinid.SV_GetByLoggedInId" type="JavaService" springFile="SV_GetByLoggedInId.spring.xml">
+    <dataobjects/>
+</service>

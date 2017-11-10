@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="SV_AllTypesWithSpaces" class="com.javaserviceautowiring.sv_alltypeswithspaces.SV_AllTypesWithSpaces" type="JavaService" springFile="SV_AllTypesWithSpaces.spring.xml">
+    <dataobjects/>
+</service>

@@ -1,0 +1,101 @@
+<wm-page data-ng-controller="Page1PageController" pagetitle="Page 1" name="page1"> 
+    <wm-header content="header" name="header1"></wm-header> 
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav> 
+    <wm-content name="content1"> 
+        <wm-page-content columnwidth="12" name="page_content1"> 
+            <wm-tabs name="tabs1"> 
+                <wm-tabpane name="tabpane1"> 
+                    <wm-form errormessage="" captionposition="top" title="Form" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.DbscenariosExecuteProcedure_getAllTypesWithAliases_InsertQueryWithSysParams.dataSet" captionalign="left" name="form1"> 
+                        <wm-layoutgrid columns="2" name="layoutgrid1"> 
+                            <wm-gridrow name="gridrow1"> 
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn1"> 
+                                    <wm-form-field name="BLOBCOL" readonly="false" displayname="Blobcol" key="BLOBCOL" type="file" show="true" widget="upload"></wm-form-field> 
+                                </wm-gridcolumn> 
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn2"> 
+                                    <wm-form-field name="TEXTCOL" readonly="false" displayname="Textcol" key="TEXTCOL" type="string" show="true" widget="text" inputtype="text" placeholder="Enter value"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow2"> 
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn3"> 
+                                    <wm-form-field name="TIMESTAMPCOL" readonly="false" displayname="Timestampcol" key="TIMESTAMPCOL" type="string" show="true" widget="timestamp" placeholder="Select date time"></wm-form-field> 
+                                </wm-gridcolumn> 
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn4"> 
+                                    <wm-form-field name="INTCOL" readonly="false" displayname="Intcol" key="INTCOL" type="integer" show="true" widget="number" placeholder="Enter value" required="false" dataset="bind:Variables.LV_AllTypes.dataSet" displayimagesrc="blobCol" datafield="intCol" displayfield="intCol"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow3"> 
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn5"> 
+                                    <wm-form-field name="DOUBLECOL" readonly="false" displayname="Doublecol" key="DOUBLECOL" type="number" show="true" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field> 
+                                </wm-gridcolumn> 
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn6"> 
+                                    <wm-form-field name="CLOBCOL" readonly="false" displayname="Clobcol" key="CLOBCOL" type="string" show="true" widget="text" inputtype="text" placeholder="Enter value"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow4"> 
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn7"> 
+                                    <wm-form-field name="CHARCOL" readonly="false" displayname="Charcol" key="CHARCOL" type="string" show="true" widget="text" placeholder="Enter value" dataset="bind:Variables.LV_AllTypes.dataSet" datafield="charCol" displayfield="charCol"></wm-form-field> 
+                                </wm-gridcolumn> 
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn8"> 
+                                    <wm-form-field name="LONGCOL" readonly="false" displayname="Longcol" key="LONGCOL" type="integer" show="true" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow5"> 
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn9"> 
+                                    <wm-form-field name="BOOLEANCOL" readonly="false" displayname="Booleancol" key="BOOLEANCOL" type="boolean" show="true" widget="checkbox" placeholder=""></wm-form-field> 
+                                </wm-gridcolumn> 
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn10"> 
+                                    <wm-form-field name="FLOATCOL" readonly="false" displayname="Floatcol" key="FLOATCOL" type="number" show="true" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow6"> 
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn11"> 
+                                    <wm-form-field name="BIGDECCOL" readonly="false" displayname="Bigdeccol" key="BIGDECCOL" type="number" show="true" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field> 
+                                </wm-gridcolumn> 
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn12"> 
+                                    <wm-form-field name="SHORTCOL" readonly="false" displayname="Shortcol" key="SHORTCOL" type="integer" show="true" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow7"> 
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn13"> 
+                                    <wm-form-field name="BIGINTCOL" readonly="false" displayname="Bigintcol" key="BIGINTCOL" type="integer" show="true" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                        </wm-layoutgrid> 
+                        <wm-buttongroup horizontalalign="right" class="form-action col-md-12" name="buttongroup1"> 
+                            <wm-button caption="Reset" type="reset" class="btn-secondary" name="button1"></wm-button> 
+                            <wm-button caption="Cancel" type="button" class="btn-warning" name="button2"></wm-button> 
+                            <wm-button caption="Save" type="submit" class="btn-primary" name="button3"></wm-button> 
+                        </wm-buttongroup> 
+                    </wm-form> 
+                </wm-tabpane> 
+                <wm-tabpane name="tabpane2"></wm-tabpane> 
+                <wm-tabpane name="tabpane3"> 
+                    <wm-table title="" dataset="bind:Variables.Db123__ExecuteSV_DefaultValues.dataSet" navigation="Classic" name="grid1"> 
+                        <wm-table-column binding="doubleCol" caption="Double Col" type="double" edit-widget-type="number" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="intCol" caption="Int Col" type="integer" edit-widget-type="number" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="stringCol" caption="String Col" type="string" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="bigintCol" caption="Bigint Col" type="long" edit-widget-type="number" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="timeCol" caption="Time Col" type="time" edit-widget-type="time" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="shortCol" caption="Short Col" type="integer" edit-widget-type="number" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="floatCol" caption="Float Col" type="double" edit-widget-type="number" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="blobCol" caption="Blob Col" type="byte" widget-type="image" edit-widget-type="number" show="true" readonly="false"> 
+                            <wm-picture picturesource="{{row.getProperty('blobCol')}}" hint="{{row.getProperty('blobCol')}}" class="" data-ng-class=""></wm-picture> 
+                        </wm-table-column> 
+                        <wm-table-column binding="booleanCol" caption="Boolean Col" type="boolean" edit-widget-type="checkbox" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="dateCol" caption="Date Col" type="date" edit-widget-type="date" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="assignedId" caption="Assigned Id" type="integer" edit-widget-type="number" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="timestampCol" caption="Timestamp Col" type="datetime" edit-widget-type="datetime" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="bigdecCol" caption="Bigdec Col" type="double" edit-widget-type="number" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="longCol" caption="Long Col" type="long" edit-widget-type="number" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="textCol" caption="Text Col" type="string" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="datetimeCol" caption="Datetime Col" type="datetime" edit-widget-type="datetime" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="charCol" caption="Char Col" type="string" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="clobCol" caption="Clob Col" type="string" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="byteCol" caption="Byte Col" type="byte" edit-widget-type="number" show="true" readonly="false"></wm-table-column> 
+                    </wm-table> 
+                </wm-tabpane> 
+            </wm-tabs> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer content="footer" name="footer1"></wm-footer> 
+</wm-page>
