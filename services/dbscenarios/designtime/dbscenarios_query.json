@@ -458,7 +458,7 @@
         "optional" : false,
         "fieldType" : {
           "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.Float",
+          "typeRef" : "java.lang.Double",
           "list" : false
         }
       }, {
@@ -467,7 +467,7 @@
         "optional" : false,
         "fieldType" : {
           "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.Double",
+          "typeRef" : "java.math.BigDecimal",
           "list" : false
         }
       }, {
@@ -999,6 +999,7 @@
       "type" : "byte",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "90",
       "required" : true
     }, {
@@ -1006,6 +1007,7 @@
       "type" : "short",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "9812",
       "required" : true
     }, {
@@ -1013,6 +1015,7 @@
       "type" : "integer",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "202",
       "required" : true
     }, {
@@ -1020,6 +1023,7 @@
       "type" : "float",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "879.8797",
       "required" : true
     }, {
@@ -1027,6 +1031,7 @@
       "type" : "long",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "78676",
       "required" : true
     }, {
@@ -1034,6 +1039,7 @@
       "type" : "double",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "9786.7",
       "required" : true
     }, {
@@ -1041,6 +1047,7 @@
       "type" : "big_integer",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "9769",
       "required" : true
     }, {
@@ -1048,6 +1055,7 @@
       "type" : "big_decimal",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "9879.7896",
       "required" : true
     }, {
@@ -1055,6 +1063,7 @@
       "type" : "character",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "m",
       "required" : true
     }, {
@@ -1062,6 +1071,7 @@
       "type" : "string",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "fhjdsg",
       "required" : true
     }, {
@@ -1069,6 +1079,7 @@
       "type" : "string",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "jghjds",
       "required" : true
     }, {
@@ -1076,6 +1087,7 @@
       "type" : "string",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "hfdhgfh",
       "required" : true
     }, {
@@ -1083,6 +1095,7 @@
       "type" : "date",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "2017-06-19",
       "required" : true
     }, {
@@ -1090,6 +1103,7 @@
       "type" : "time",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "06:22:35",
       "required" : true
     }, {
@@ -1097,6 +1111,7 @@
       "type" : "datetime",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "2017-06-19T06:22:52",
       "required" : true
     }, {
@@ -1104,6 +1119,7 @@
       "type" : "timestamp",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : 1497878570000,
       "required" : true
     }, {
@@ -1111,6 +1127,7 @@
       "type" : "boolean",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : true,
       "required" : true
     } ],
@@ -1140,6 +1157,7 @@
       "type" : "byte",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "16",
       "required" : true
     }, {
@@ -1147,6 +1165,7 @@
       "type" : "short",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "79",
       "required" : true
     }, {
@@ -1154,6 +1173,7 @@
       "type" : "integer",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "78",
       "required" : true
     }, {
@@ -1161,6 +1181,7 @@
       "type" : "float",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "769.789",
       "required" : true
     }, {
@@ -1168,6 +1189,7 @@
       "type" : "long",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "78697",
       "required" : true
     }, {
@@ -1175,6 +1197,7 @@
       "type" : "double",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "789.789",
       "required" : true
     }, {
@@ -1182,6 +1205,7 @@
       "type" : "big_integer",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "7896",
       "required" : true
     }, {
@@ -1189,6 +1213,7 @@
       "type" : "big_decimal",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "79879.7869",
       "required" : true
     }, {
@@ -1196,6 +1221,7 @@
       "type" : "character",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "j",
       "required" : true
     }, {
@@ -1203,6 +1229,7 @@
       "type" : "string",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "gfhfgdh",
       "required" : true
     }, {
@@ -1210,6 +1237,7 @@
       "type" : "string",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "gfdhfdgh",
       "required" : true
     }, {
@@ -1217,6 +1245,7 @@
       "type" : "string",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "fdhfgh",
       "required" : true
     }, {
@@ -1224,6 +1253,7 @@
       "type" : "date",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "2017-06-19",
       "required" : true
     }, {
@@ -1231,6 +1261,7 @@
       "type" : "time",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "12:26:17",
       "required" : true
     }, {
@@ -1238,6 +1269,7 @@
       "type" : "datetime",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "2017-06-19T12:26:30",
       "required" : true
     }, {
@@ -1245,6 +1277,7 @@
       "type" : "timestamp",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : 1497855389000,
       "required" : true
     }, {
@@ -1252,6 +1285,7 @@
       "type" : "boolean",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : true,
       "required" : true
     }, {
@@ -1259,6 +1293,7 @@
       "type" : "blob",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : { },
       "required" : true
     } ],

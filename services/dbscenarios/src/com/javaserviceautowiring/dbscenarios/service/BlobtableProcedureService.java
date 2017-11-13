@@ -7,6 +7,8 @@ package com.javaserviceautowiring.dbscenarios.service;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -31,7 +33,7 @@ public interface BlobtableProcedureService {
      * @param blobtableProcedure Details of the BlobtableProcedure to be created; value cannot be null.
      * @return The newly created BlobtableProcedure.
      */
-	BlobtableProcedure create(BlobtableProcedure blobtableProcedure);
+	BlobtableProcedure create(@Valid BlobtableProcedure blobtableProcedure);
 
 
 	/**
@@ -61,7 +63,7 @@ public interface BlobtableProcedureService {
 	 * @return The updated BlobtableProcedure.
 	 * @throws EntityNotFoundException if no BlobtableProcedure is found with given input.
 	 */
-	BlobtableProcedure update(BlobtableProcedure blobtableProcedure) throws EntityNotFoundException;
+	BlobtableProcedure update(@Valid BlobtableProcedure blobtableProcedure) throws EntityNotFoundException;
 
     /**
 	 * Deletes an existing BlobtableProcedure with the given id.

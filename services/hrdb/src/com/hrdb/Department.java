@@ -28,7 +28,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
  */
 @Entity
 @Table(name = "`DEPARTMENT`", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"`DEPT_CODE`"})})
+        @UniqueConstraint(name = "`SYS_IDX_UK_DEPARTMENT_DEPT_CODE_10095`", columnNames = {"`DEPT_CODE`"})})
 public class Department implements Serializable {
 
     private Integer deptId;
@@ -136,7 +136,7 @@ public class Department implements Serializable {
     }
 
     @JsonInclude(Include.NON_EMPTY)
-    
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "department")
     public List<Employee> getEmployees() {
         return this.employees;
     }

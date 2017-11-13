@@ -37,33 +37,6 @@ public class DbscenariosQueryExecutorServiceImpl implements DbscenariosQueryExec
     @Qualifier("dbscenariosWMQueryExecutor")
     private WMQueryExecutor queryExecutor;
 
-    @Transactional(value = "dbscenariosTransactionManager")
-    @Override
-    public Integer executeSV_InsertWithBlob(SvInsertWithBlobRequest svInsertWithBlobRequest) {
-        Map params = new HashMap(18);
-
-        params.put("BYTECOL", svInsertWithBlobRequest.getBytecol());
-        params.put("SHORTCOL", svInsertWithBlobRequest.getShortcol());
-        params.put("INTCOL", svInsertWithBlobRequest.getIntcol());
-        params.put("FLOATCOL", svInsertWithBlobRequest.getFloatcol());
-        params.put("LONGCOL", svInsertWithBlobRequest.getLongcol());
-        params.put("DOUBLECOL", svInsertWithBlobRequest.getDoublecol());
-        params.put("BIGINTCOL", svInsertWithBlobRequest.getBigintcol());
-        params.put("BIGDECCOL", svInsertWithBlobRequest.getBigdeccol());
-        params.put("CHARCOL", svInsertWithBlobRequest.getCharcol());
-        params.put("STRINGCOL", svInsertWithBlobRequest.getStringcol());
-        params.put("TEXTCOL", svInsertWithBlobRequest.getTextcol());
-        params.put("CLOBCOL", svInsertWithBlobRequest.getClobcol());
-        params.put("DATECOL", svInsertWithBlobRequest.getDatecol());
-        params.put("TIMECOL", svInsertWithBlobRequest.getTimecol());
-        params.put("DATETIMECOL", svInsertWithBlobRequest.getDatetimecol());
-        params.put("TIMESTAMPCOL", svInsertWithBlobRequest.getTimestampcol());
-        params.put("BOOLEANCOL", svInsertWithBlobRequest.getBooleancol());
-        params.put("BLOBCOL", svInsertWithBlobRequest.getBlobcol());
-
-        return queryExecutor.executeNamedQueryForUpdate("SV_InsertWithBlob", params);
-    }
-
     @Transactional(readOnly = true, value = "dbscenariosTransactionManager")
     @Override
     public Page<SvGetAllTypesResponse> executeSV_GetAllTypes(Pageable pageable) {
@@ -97,6 +70,33 @@ public class DbscenariosQueryExecutorServiceImpl implements DbscenariosQueryExec
         return queryExecutor.exportNamedQueryData("SV_GetAllTypes", params, exportType, SvGetAllTypesResponse.class, pageable);
     }
 
+    @Transactional(value = "dbscenariosTransactionManager")
+    @Override
+    public Integer executeSV_InsertWithBlob(SvInsertWithBlobRequest svInsertWithBlobRequest) {
+        Map params = new HashMap(18);
+
+        params.put("BYTECOL", svInsertWithBlobRequest.getBytecol());
+        params.put("SHORTCOL", svInsertWithBlobRequest.getShortcol());
+        params.put("INTCOL", svInsertWithBlobRequest.getIntcol());
+        params.put("FLOATCOL", svInsertWithBlobRequest.getFloatcol());
+        params.put("LONGCOL", svInsertWithBlobRequest.getLongcol());
+        params.put("DOUBLECOL", svInsertWithBlobRequest.getDoublecol());
+        params.put("BIGINTCOL", svInsertWithBlobRequest.getBigintcol());
+        params.put("BIGDECCOL", svInsertWithBlobRequest.getBigdeccol());
+        params.put("CHARCOL", svInsertWithBlobRequest.getCharcol());
+        params.put("STRINGCOL", svInsertWithBlobRequest.getStringcol());
+        params.put("TEXTCOL", svInsertWithBlobRequest.getTextcol());
+        params.put("CLOBCOL", svInsertWithBlobRequest.getClobcol());
+        params.put("DATECOL", svInsertWithBlobRequest.getDatecol());
+        params.put("TIMECOL", svInsertWithBlobRequest.getTimecol());
+        params.put("DATETIMECOL", svInsertWithBlobRequest.getDatetimecol());
+        params.put("TIMESTAMPCOL", svInsertWithBlobRequest.getTimestampcol());
+        params.put("BOOLEANCOL", svInsertWithBlobRequest.getBooleancol());
+        params.put("BLOBCOL", svInsertWithBlobRequest.getBlobcol());
+
+        return queryExecutor.executeNamedQueryForUpdate("SV_InsertWithBlob", params);
+    }
+
     @Transactional(readOnly = true, value = "dbscenariosTransactionManager")
     @Override
     public SvGetAllTypesSingleResponse executeSV_GetAllTypesSingle() {
@@ -118,55 +118,6 @@ public class DbscenariosQueryExecutorServiceImpl implements DbscenariosQueryExec
             throw new BlobContentNotFoundException("Blob content not found for blobCol in query SV_GetAllTypesSingle");
         }
         return new ByteArrayInputStream(_result.getBlobCol());
-    }
-
-    @Transactional(readOnly = true, value = "dbscenariosTransactionManager")
-    @Override
-    public SvGetLoggedInIdByPkIdResponse executeSV_GetLoggedInIdByPkId() {
-        Map params = new HashMap(0);
-
-
-        return queryExecutor.executeNamedQuery("SV_GetLoggedInIdByPkId", params, SvGetLoggedInIdByPkIdResponse.class);
-    }
-
-    @Transactional(readOnly = true, value = "dbscenariosTransactionManager")
-    @Override
-    public InputStream getBlobColContentForSV_GetLoggedInIdByPkId() throws EntityNotFoundException {
-        Map params = new HashMap(0);
-
-
-        SvGetLoggedInIdByPkIdResponse _result =  queryExecutor.executeNamedQuery("SV_GetLoggedInIdByPkId", params, SvGetLoggedInIdByPkIdResponse.class);
-        if(_result.getBlobCol() == null) {
-            LOGGER.debug("Blob content not exists for blobCol in query SV_GetLoggedInIdByPkId");
-            throw new BlobContentNotFoundException("Blob content not found for blobCol in query SV_GetLoggedInIdByPkId");
-        }
-        return new ByteArrayInputStream(_result.getBlobCol());
-    }
-
-    @Transactional(value = "dbscenariosTransactionManager")
-    @Override
-    public Integer executeSV_InsertQuery(SvInsertQueryRequest svInsertQueryRequest) {
-        Map params = new HashMap(17);
-
-        params.put("BYTECOL", svInsertQueryRequest.getBytecol());
-        params.put("SHORTCOL", svInsertQueryRequest.getShortcol());
-        params.put("INTCOL", svInsertQueryRequest.getIntcol());
-        params.put("FLOATCOL", svInsertQueryRequest.getFloatcol());
-        params.put("LONGCOL", svInsertQueryRequest.getLongcol());
-        params.put("DOUBLECOL", svInsertQueryRequest.getDoublecol());
-        params.put("BIGINTCOL", svInsertQueryRequest.getBigintcol());
-        params.put("BIGDECCOL", svInsertQueryRequest.getBigdeccol());
-        params.put("CHARCOL", svInsertQueryRequest.getCharcol());
-        params.put("STRINGCOL", svInsertQueryRequest.getStringcol());
-        params.put("TEXTCOL", svInsertQueryRequest.getTextcol());
-        params.put("CLOBCOL", svInsertQueryRequest.getClobcol());
-        params.put("DATECOL", svInsertQueryRequest.getDatecol());
-        params.put("TIMECOL", svInsertQueryRequest.getTimecol());
-        params.put("DATETIMECOL", svInsertQueryRequest.getDatetimecol());
-        params.put("TIMESTAMPCOL", svInsertQueryRequest.getTimestampcol());
-        params.put("BOOLEANCOL", svInsertQueryRequest.getBooleancol());
-
-        return queryExecutor.executeNamedQueryForUpdate("SV_InsertQuery", params);
     }
 
     @Transactional(readOnly = true, value = "dbscenariosTransactionManager")
@@ -200,6 +151,55 @@ public class DbscenariosQueryExecutorServiceImpl implements DbscenariosQueryExec
 
 
         return queryExecutor.exportNamedQueryData("SV_AllTypesWithoutSpace", params, exportType, SvAllTypesWithoutSpaceResponse.class, pageable);
+    }
+
+    @Transactional(value = "dbscenariosTransactionManager")
+    @Override
+    public Integer executeSV_InsertQuery(SvInsertQueryRequest svInsertQueryRequest) {
+        Map params = new HashMap(17);
+
+        params.put("BYTECOL", svInsertQueryRequest.getBytecol());
+        params.put("SHORTCOL", svInsertQueryRequest.getShortcol());
+        params.put("INTCOL", svInsertQueryRequest.getIntcol());
+        params.put("FLOATCOL", svInsertQueryRequest.getFloatcol());
+        params.put("LONGCOL", svInsertQueryRequest.getLongcol());
+        params.put("DOUBLECOL", svInsertQueryRequest.getDoublecol());
+        params.put("BIGINTCOL", svInsertQueryRequest.getBigintcol());
+        params.put("BIGDECCOL", svInsertQueryRequest.getBigdeccol());
+        params.put("CHARCOL", svInsertQueryRequest.getCharcol());
+        params.put("STRINGCOL", svInsertQueryRequest.getStringcol());
+        params.put("TEXTCOL", svInsertQueryRequest.getTextcol());
+        params.put("CLOBCOL", svInsertQueryRequest.getClobcol());
+        params.put("DATECOL", svInsertQueryRequest.getDatecol());
+        params.put("TIMECOL", svInsertQueryRequest.getTimecol());
+        params.put("DATETIMECOL", svInsertQueryRequest.getDatetimecol());
+        params.put("TIMESTAMPCOL", svInsertQueryRequest.getTimestampcol());
+        params.put("BOOLEANCOL", svInsertQueryRequest.getBooleancol());
+
+        return queryExecutor.executeNamedQueryForUpdate("SV_InsertQuery", params);
+    }
+
+    @Transactional(readOnly = true, value = "dbscenariosTransactionManager")
+    @Override
+    public SvGetLoggedInIdByPkIdResponse executeSV_GetLoggedInIdByPkId() {
+        Map params = new HashMap(0);
+
+
+        return queryExecutor.executeNamedQuery("SV_GetLoggedInIdByPkId", params, SvGetLoggedInIdByPkIdResponse.class);
+    }
+
+    @Transactional(readOnly = true, value = "dbscenariosTransactionManager")
+    @Override
+    public InputStream getBlobColContentForSV_GetLoggedInIdByPkId() throws EntityNotFoundException {
+        Map params = new HashMap(0);
+
+
+        SvGetLoggedInIdByPkIdResponse _result =  queryExecutor.executeNamedQuery("SV_GetLoggedInIdByPkId", params, SvGetLoggedInIdByPkIdResponse.class);
+        if(_result.getBlobCol() == null) {
+            LOGGER.debug("Blob content not exists for blobCol in query SV_GetLoggedInIdByPkId");
+            throw new BlobContentNotFoundException("Blob content not found for blobCol in query SV_GetLoggedInIdByPkId");
+        }
+        return new ByteArrayInputStream(_result.getBlobCol());
     }
 
     @Transactional(readOnly = true, value = "dbscenariosTransactionManager")

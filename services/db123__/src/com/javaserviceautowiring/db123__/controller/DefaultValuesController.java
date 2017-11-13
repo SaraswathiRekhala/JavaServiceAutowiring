@@ -23,7 +23,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
@@ -60,26 +62,17 @@ public class DefaultValuesController {
 	private DefaultValuesService defaultValuesService;
 
 	@ApiOperation(value = "Creates a new DefaultValues instance.")
-	@RequestMapping(method = RequestMethod.POST)
+@RequestMapping(method = RequestMethod.POST, consumes = "multipart/form-data")
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-	public DefaultValues createDefaultValues(@RequestBody DefaultValues defaultValues) {
+public DefaultValues createDefaultValues(@RequestPart("wm_data_json") DefaultValues defaultValues, @RequestPart(value = "blobCol", required = false) MultipartFile _blobCol) {
 		LOGGER.debug("Create DefaultValues with information: {}" , defaultValues);
 
+    defaultValues.setBlobCol(WMMultipartUtils.toByteArray(_blobCol));
 		defaultValues = defaultValuesService.create(defaultValues);
 		LOGGER.debug("Created DefaultValues with information: {}" , defaultValues);
 
 	    return defaultValues;
 	}
-
-	@ApiOperation(value = "Creates a new DefaultValues instance.This API should be used when the DefaultValues instance has fields that requires multipart data.")
-	@RequestMapping(method = RequestMethod.POST, consumes = {"multipart/form-data"})
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public DefaultValues createDefaultValues(MultipartHttpServletRequest multipartHttpServletRequest) {
-    	DefaultValues defaultValues = WMMultipartUtils.toObject(multipartHttpServletRequest, DefaultValues.class, "db123__"); 
-        LOGGER.debug("Creating a new DefaultValues with information: {}" , defaultValues);
-        return defaultValuesService.create(defaultValues);
-    }
-
 
     @ApiOperation(value = "Returns the DefaultValues instance associated with the given id.")
     @RequestMapping(value = "/{id:.+}", method = RequestMethod.GET)

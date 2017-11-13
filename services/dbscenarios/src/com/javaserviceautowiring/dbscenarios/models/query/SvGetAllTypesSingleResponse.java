@@ -17,8 +17,10 @@ import org.joda.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.wavemaker.commons.json.serializer.ByteArrayToStringSerializer;
+import com.wavemaker.commons.json.views.JsonViews.BlobAsUrlView;
 import com.wavemaker.runtime.data.annotations.ColumnAlias;
 
 public class SvGetAllTypesSingleResponse implements Serializable {
@@ -40,10 +42,10 @@ public class SvGetAllTypesSingleResponse implements Serializable {
     private Long longCol;
 
     @ColumnAlias("FLOAT COL")
-    private Float floatCol;
+    private Double floatCol;
 
     @ColumnAlias("DOUBLE COL")
-    private Double doubleCol;
+    private BigDecimal doubleCol;
 
     @ColumnAlias("BIGDEC COL")
     private BigDecimal bigdecCol;
@@ -78,6 +80,7 @@ public class SvGetAllTypesSingleResponse implements Serializable {
     @ColumnAlias("BOOLEAN COL")
     private Boolean booleanCol;
 
+        @JsonView(BlobAsUrlView.class)
     @JsonSerialize(using = ByteArrayToStringSerializer.class)
     @JsonProperty(access = Access.READ_ONLY)
     @ColumnAlias("BLOB COL")
@@ -123,19 +126,19 @@ public class SvGetAllTypesSingleResponse implements Serializable {
         this.longCol = longCol;
     }
 
-    public Float getFloatCol() {
+    public Double getFloatCol() {
         return this.floatCol;
     }
 
-    public void setFloatCol(Float floatCol) {
+    public void setFloatCol(Double floatCol) {
         this.floatCol = floatCol;
     }
 
-    public Double getDoubleCol() {
+    public BigDecimal getDoubleCol() {
         return this.doubleCol;
     }
 
-    public void setDoubleCol(Double doubleCol) {
+    public void setDoubleCol(BigDecimal doubleCol) {
         this.doubleCol = doubleCol;
     }
 

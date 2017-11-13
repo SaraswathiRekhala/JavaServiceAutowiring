@@ -7,6 +7,8 @@ package com.javaserviceautowiring.db123__.service;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -31,7 +33,7 @@ public interface BlobtypesService {
      * @param blobtypes Details of the Blobtypes to be created; value cannot be null.
      * @return The newly created Blobtypes.
      */
-	Blobtypes create(Blobtypes blobtypes);
+	Blobtypes create(@Valid Blobtypes blobtypes);
 
 
 	/**
@@ -61,7 +63,7 @@ public interface BlobtypesService {
 	 * @return The updated Blobtypes.
 	 * @throws EntityNotFoundException if no Blobtypes is found with given input.
 	 */
-	Blobtypes update(Blobtypes blobtypes) throws EntityNotFoundException;
+	Blobtypes update(@Valid Blobtypes blobtypes) throws EntityNotFoundException;
 
     /**
 	 * Deletes an existing Blobtypes with the given id.

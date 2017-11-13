@@ -7,6 +7,8 @@ package com.javaserviceautowiring.db123__.service;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -31,7 +33,7 @@ public interface DefaultValuesService {
      * @param defaultValues Details of the DefaultValues to be created; value cannot be null.
      * @return The newly created DefaultValues.
      */
-	DefaultValues create(DefaultValues defaultValues);
+	DefaultValues create(@Valid DefaultValues defaultValues);
 
 
 	/**
@@ -61,7 +63,7 @@ public interface DefaultValuesService {
 	 * @return The updated DefaultValues.
 	 * @throws EntityNotFoundException if no DefaultValues is found with given input.
 	 */
-	DefaultValues update(DefaultValues defaultValues) throws EntityNotFoundException;
+	DefaultValues update(@Valid DefaultValues defaultValues) throws EntityNotFoundException;
 
     /**
 	 * Deletes an existing DefaultValues with the given id.

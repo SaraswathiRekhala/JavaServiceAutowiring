@@ -12,21 +12,21 @@ import com.javaserviceautowiring.dbscenarios.models.procedure.*;
 
 public interface DbscenariosProcedureExecutorService {
 
-    Void executeProcedure_AllBlobsInsert(ProcedureAllBlobsInsertRequest procedureAllBlobsInsertRequest);
-
-    Void executeProcedure_InBlob2(ProcedureInBlob2Request procedureInBlob2request);
-
-    ProcedureGetAllTypesWithAliasesInsertQueryResponse executeProcedure_getAllTypesWithAliases_InsertQuery(ProcedureGetAllTypesWithAliasesInsertQueryRequest procedureGetAllTypesWithAliasesInsertQueryRequest);
+    ProcedureInsertAndGetQueryResponse executeProcedure_InsertAndGetQuery(ProcedureInsertAndGetQueryRequest procedureInsertAndGetQueryRequest);
 
     Void executeProcedure_SingleBlobInsert(ProcedureSingleBlobInsertRequest procedureSingleBlobInsertRequest);
 
-    ProcedureInsertAndGetQueryResponse executeProcedure_InsertAndGetQuery(ProcedureInsertAndGetQueryRequest procedureInsertAndGetQueryRequest);
+    ProcedureGetAllTypesWithAliasesInsertQueryResponse executeProcedure_getAllTypesWithAliases_InsertQuery(ProcedureGetAllTypesWithAliasesInsertQueryRequest procedureGetAllTypesWithAliasesInsertQueryRequest);
 
     ProcedureGetByCurrentDateResponse executeProcedure_GetByCurrentDate(Date datecol);
 
     ProcedureGetAllTypesWithAliasesResponse executeProcedure_getAllTypesWithAliases();
 
     ProcedureGetAllTypesWithAliasesInsertQueryWithSysParamsResponse executeProcedure_getAllTypesWithAliases_InsertQueryWithSysParams(ProcedureGetAllTypesWithAliasesInsertQueryWithSysParamsRequest procedureGetAllTypesWithAliasesInsertQueryWithSysParamsRequest);
+
+    Void executeProcedure_InBlob2(ProcedureInBlob2Request procedureInBlob2request);
+
+    Void executeProcedure_AllBlobsInsert(ProcedureAllBlobsInsertRequest procedureAllBlobsInsertRequest);
 
 }
 

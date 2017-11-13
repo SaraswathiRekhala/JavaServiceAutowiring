@@ -23,7 +23,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
@@ -60,26 +62,17 @@ public class AllTypesWithoutSpaceController {
 	private AllTypesWithoutSpaceService allTypesWithoutSpaceService;
 
 	@ApiOperation(value = "Creates a new AllTypesWithoutSpace instance.")
-	@RequestMapping(method = RequestMethod.POST)
+@RequestMapping(method = RequestMethod.POST, consumes = "multipart/form-data")
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-	public AllTypesWithoutSpace createAllTypesWithoutSpace(@RequestBody AllTypesWithoutSpace allTypesWithoutSpace) {
+public AllTypesWithoutSpace createAllTypesWithoutSpace(@RequestPart("wm_data_json") AllTypesWithoutSpace allTypesWithoutSpace, @RequestPart(value = "blobcol", required = false) MultipartFile _blobcol) {
 		LOGGER.debug("Create AllTypesWithoutSpace with information: {}" , allTypesWithoutSpace);
 
+    allTypesWithoutSpace.setBlobcol(WMMultipartUtils.toByteArray(_blobcol));
 		allTypesWithoutSpace = allTypesWithoutSpaceService.create(allTypesWithoutSpace);
 		LOGGER.debug("Created AllTypesWithoutSpace with information: {}" , allTypesWithoutSpace);
 
 	    return allTypesWithoutSpace;
 	}
-
-	@ApiOperation(value = "Creates a new AllTypesWithoutSpace instance.This API should be used when the AllTypesWithoutSpace instance has fields that requires multipart data.")
-	@RequestMapping(method = RequestMethod.POST, consumes = {"multipart/form-data"})
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public AllTypesWithoutSpace createAllTypesWithoutSpace(MultipartHttpServletRequest multipartHttpServletRequest) {
-    	AllTypesWithoutSpace allTypesWithoutSpace = WMMultipartUtils.toObject(multipartHttpServletRequest, AllTypesWithoutSpace.class, "dbscenarios"); 
-        LOGGER.debug("Creating a new AllTypesWithoutSpace with information: {}" , allTypesWithoutSpace);
-        return allTypesWithoutSpaceService.create(allTypesWithoutSpace);
-    }
-
 
     @ApiOperation(value = "Returns the AllTypesWithoutSpace instance associated with the given id.")
     @RequestMapping(value = "/{id:.+}", method = RequestMethod.GET)

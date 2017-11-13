@@ -46,40 +46,14 @@ public class ProcedureExecutionController {
     @Autowired
     private DbscenariosProcedureExecutorService procedureService;
 
-    @RequestMapping(value = "/procedure/execute/Procedure_AllBlobsInsert", method = RequestMethod.POST)
+    @RequestMapping(value = "/procedure/execute/Procedure_InsertAndGetQuery", method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "All Blobs Insert")
-    public Void executeProcedure_AllBlobsInsert(@Valid @RequestPart("wm_data_json") ProcedureAllBlobsInsertRequest procedureAllBlobsInsertRequest, @RequestPart(value = "BLOBTYPE1") MultipartFile blobtype1, @RequestPart(value = "BLOBTYPE2") MultipartFile blobtype2, @RequestPart(value = "BLOBTYPE3") MultipartFile blobtype3, @RequestPart(value = "BLOBTYPE4") MultipartFile blobtype4, @RequestPart(value = "BLOBTYPE5") MultipartFile blobtype5, HttpServletRequest _request) {
-        LOGGER.debug("Executing named procedure: Procedure_AllBlobsInsert");
-        procedureAllBlobsInsertRequest.setBlobtype1(WMMultipartUtils.toByteArray(blobtype1));
-        procedureAllBlobsInsertRequest.setBlobtype2(WMMultipartUtils.toByteArray(blobtype2));
-        procedureAllBlobsInsertRequest.setBlobtype3(WMMultipartUtils.toByteArray(blobtype3));
-        procedureAllBlobsInsertRequest.setBlobtype4(WMMultipartUtils.toByteArray(blobtype4));
-        procedureAllBlobsInsertRequest.setBlobtype5(WMMultipartUtils.toByteArray(blobtype5));
-        Void _result = procedureService.executeProcedure_AllBlobsInsert(procedureAllBlobsInsertRequest);
-        LOGGER.debug("got the result for named procedure: Procedure_AllBlobsInsert, result:{}", _result);
-        return _result;
-    }
-
-    @RequestMapping(value = "/procedure/execute/Procedure_InBlob2", method = RequestMethod.POST)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "In Blob2 insert")
-    public Void executeProcedure_InBlob2(@Valid @RequestPart("wm_data_json") ProcedureInBlob2Request procedureInBlob2request, @RequestPart(value = "BLOBCOL") MultipartFile blobcol, HttpServletRequest _request) {
-        LOGGER.debug("Executing named procedure: Procedure_InBlob2");
-        procedureInBlob2request.setBlobcol(WMMultipartUtils.toByteArray(blobcol));
-        Void _result = procedureService.executeProcedure_InBlob2(procedureInBlob2request);
-        LOGGER.debug("got the result for named procedure: Procedure_InBlob2, result:{}", _result);
-        return _result;
-    }
-
-    @RequestMapping(value = "/procedure/execute/Procedure_getAllTypesWithAliases_InsertQuery", method = RequestMethod.POST)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "getAllTypesWithAliases_InsertQuery")
-    public ProcedureGetAllTypesWithAliasesInsertQueryResponse executeProcedure_getAllTypesWithAliases_InsertQuery(@Valid @RequestPart("wm_data_json") ProcedureGetAllTypesWithAliasesInsertQueryRequest procedureGetAllTypesWithAliasesInsertQueryRequest, @RequestPart(value = "BLOBCOL") MultipartFile blobcol, HttpServletRequest _request) {
-        LOGGER.debug("Executing named procedure: Procedure_getAllTypesWithAliases_InsertQuery");
-        procedureGetAllTypesWithAliasesInsertQueryRequest.setBlobcol(WMMultipartUtils.toByteArray(blobcol));
-        ProcedureGetAllTypesWithAliasesInsertQueryResponse _result = procedureService.executeProcedure_getAllTypesWithAliases_InsertQuery(procedureGetAllTypesWithAliasesInsertQueryRequest);
-        LOGGER.debug("got the result for named procedure: Procedure_getAllTypesWithAliases_InsertQuery, result:{}", _result);
+    @ApiOperation(value = "Insert & Get Query")
+    public ProcedureInsertAndGetQueryResponse executeProcedure_InsertAndGetQuery(@Valid @RequestPart("wm_data_json") ProcedureInsertAndGetQueryRequest procedureInsertAndGetQueryRequest, @RequestPart(value = "BLOBCOL") MultipartFile blobcol, HttpServletRequest _request) {
+        LOGGER.debug("Executing named procedure: Procedure_InsertAndGetQuery");
+        procedureInsertAndGetQueryRequest.setBlobcol(WMMultipartUtils.toByteArray(blobcol));
+        ProcedureInsertAndGetQueryResponse _result = procedureService.executeProcedure_InsertAndGetQuery(procedureInsertAndGetQueryRequest);
+        LOGGER.debug("got the result for named procedure: Procedure_InsertAndGetQuery, result:{}", _result);
         return _result;
     }
 
@@ -94,14 +68,14 @@ public class ProcedureExecutionController {
         return _result;
     }
 
-    @RequestMapping(value = "/procedure/execute/Procedure_InsertAndGetQuery", method = RequestMethod.POST)
+    @RequestMapping(value = "/procedure/execute/Procedure_getAllTypesWithAliases_InsertQuery", method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "Insert & Get Query")
-    public ProcedureInsertAndGetQueryResponse executeProcedure_InsertAndGetQuery(@Valid @RequestPart("wm_data_json") ProcedureInsertAndGetQueryRequest procedureInsertAndGetQueryRequest, @RequestPart(value = "BLOBCOL") MultipartFile blobcol, HttpServletRequest _request) {
-        LOGGER.debug("Executing named procedure: Procedure_InsertAndGetQuery");
-        procedureInsertAndGetQueryRequest.setBlobcol(WMMultipartUtils.toByteArray(blobcol));
-        ProcedureInsertAndGetQueryResponse _result = procedureService.executeProcedure_InsertAndGetQuery(procedureInsertAndGetQueryRequest);
-        LOGGER.debug("got the result for named procedure: Procedure_InsertAndGetQuery, result:{}", _result);
+    @ApiOperation(value = "getAllTypesWithAliases_InsertQuery")
+    public ProcedureGetAllTypesWithAliasesInsertQueryResponse executeProcedure_getAllTypesWithAliases_InsertQuery(@Valid @RequestPart("wm_data_json") ProcedureGetAllTypesWithAliasesInsertQueryRequest procedureGetAllTypesWithAliasesInsertQueryRequest, @RequestPart(value = "BLOBCOL") MultipartFile blobcol, HttpServletRequest _request) {
+        LOGGER.debug("Executing named procedure: Procedure_getAllTypesWithAliases_InsertQuery");
+        procedureGetAllTypesWithAliasesInsertQueryRequest.setBlobcol(WMMultipartUtils.toByteArray(blobcol));
+        ProcedureGetAllTypesWithAliasesInsertQueryResponse _result = procedureService.executeProcedure_getAllTypesWithAliases_InsertQuery(procedureGetAllTypesWithAliasesInsertQueryRequest);
+        LOGGER.debug("got the result for named procedure: Procedure_getAllTypesWithAliases_InsertQuery, result:{}", _result);
         return _result;
     }
 
@@ -133,6 +107,32 @@ public class ProcedureExecutionController {
         procedureGetAllTypesWithAliasesInsertQueryWithSysParamsRequest.setBlobcol(WMMultipartUtils.toByteArray(blobcol));
         ProcedureGetAllTypesWithAliasesInsertQueryWithSysParamsResponse _result = procedureService.executeProcedure_getAllTypesWithAliases_InsertQueryWithSysParams(procedureGetAllTypesWithAliasesInsertQueryWithSysParamsRequest);
         LOGGER.debug("got the result for named procedure: Procedure_getAllTypesWithAliases_InsertQueryWithSysParams, result:{}", _result);
+        return _result;
+    }
+
+    @RequestMapping(value = "/procedure/execute/Procedure_InBlob2", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "In Blob2 insert")
+    public Void executeProcedure_InBlob2(@Valid @RequestPart("wm_data_json") ProcedureInBlob2Request procedureInBlob2request, @RequestPart(value = "BLOBCOL") MultipartFile blobcol, HttpServletRequest _request) {
+        LOGGER.debug("Executing named procedure: Procedure_InBlob2");
+        procedureInBlob2request.setBlobcol(WMMultipartUtils.toByteArray(blobcol));
+        Void _result = procedureService.executeProcedure_InBlob2(procedureInBlob2request);
+        LOGGER.debug("got the result for named procedure: Procedure_InBlob2, result:{}", _result);
+        return _result;
+    }
+
+    @RequestMapping(value = "/procedure/execute/Procedure_AllBlobsInsert", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "All Blobs Insert")
+    public Void executeProcedure_AllBlobsInsert(@Valid @RequestPart("wm_data_json") ProcedureAllBlobsInsertRequest procedureAllBlobsInsertRequest, @RequestPart(value = "BLOBTYPE1") MultipartFile blobtype1, @RequestPart(value = "BLOBTYPE2") MultipartFile blobtype2, @RequestPart(value = "BLOBTYPE3") MultipartFile blobtype3, @RequestPart(value = "BLOBTYPE4") MultipartFile blobtype4, @RequestPart(value = "BLOBTYPE5") MultipartFile blobtype5, HttpServletRequest _request) {
+        LOGGER.debug("Executing named procedure: Procedure_AllBlobsInsert");
+        procedureAllBlobsInsertRequest.setBlobtype1(WMMultipartUtils.toByteArray(blobtype1));
+        procedureAllBlobsInsertRequest.setBlobtype2(WMMultipartUtils.toByteArray(blobtype2));
+        procedureAllBlobsInsertRequest.setBlobtype3(WMMultipartUtils.toByteArray(blobtype3));
+        procedureAllBlobsInsertRequest.setBlobtype4(WMMultipartUtils.toByteArray(blobtype4));
+        procedureAllBlobsInsertRequest.setBlobtype5(WMMultipartUtils.toByteArray(blobtype5));
+        Void _result = procedureService.executeProcedure_AllBlobsInsert(procedureAllBlobsInsertRequest);
+        LOGGER.debug("got the result for named procedure: Procedure_AllBlobsInsert, result:{}", _result);
         return _result;
     }
 

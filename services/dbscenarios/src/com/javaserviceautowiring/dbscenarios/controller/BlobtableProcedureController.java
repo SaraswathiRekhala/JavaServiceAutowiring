@@ -23,7 +23,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
@@ -60,26 +62,17 @@ public class BlobtableProcedureController {
 	private BlobtableProcedureService blobtableProcedureService;
 
 	@ApiOperation(value = "Creates a new BlobtableProcedure instance.")
-	@RequestMapping(method = RequestMethod.POST)
+@RequestMapping(method = RequestMethod.POST, consumes = "multipart/form-data")
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-	public BlobtableProcedure createBlobtableProcedure(@RequestBody BlobtableProcedure blobtableProcedure) {
+public BlobtableProcedure createBlobtableProcedure(@RequestPart("wm_data_json") BlobtableProcedure blobtableProcedure, @RequestPart(value = "blobcol", required = false) MultipartFile _blobcol) {
 		LOGGER.debug("Create BlobtableProcedure with information: {}" , blobtableProcedure);
 
+    blobtableProcedure.setBlobcol(WMMultipartUtils.toByteArray(_blobcol));
 		blobtableProcedure = blobtableProcedureService.create(blobtableProcedure);
 		LOGGER.debug("Created BlobtableProcedure with information: {}" , blobtableProcedure);
 
 	    return blobtableProcedure;
 	}
-
-	@ApiOperation(value = "Creates a new BlobtableProcedure instance.This API should be used when the BlobtableProcedure instance has fields that requires multipart data.")
-	@RequestMapping(method = RequestMethod.POST, consumes = {"multipart/form-data"})
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public BlobtableProcedure createBlobtableProcedure(MultipartHttpServletRequest multipartHttpServletRequest) {
-    	BlobtableProcedure blobtableProcedure = WMMultipartUtils.toObject(multipartHttpServletRequest, BlobtableProcedure.class, "dbscenarios"); 
-        LOGGER.debug("Creating a new BlobtableProcedure with information: {}" , blobtableProcedure);
-        return blobtableProcedureService.create(blobtableProcedure);
-    }
-
 
     @ApiOperation(value = "Returns the BlobtableProcedure instance associated with the given id.")
     @RequestMapping(value = "/{id:.+}", method = RequestMethod.GET)

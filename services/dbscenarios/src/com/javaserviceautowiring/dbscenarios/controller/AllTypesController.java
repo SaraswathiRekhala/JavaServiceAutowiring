@@ -23,7 +23,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
@@ -60,26 +62,17 @@ public class AllTypesController {
 	private AllTypesService allTypesService;
 
 	@ApiOperation(value = "Creates a new AllTypes instance.")
-	@RequestMapping(method = RequestMethod.POST)
+@RequestMapping(method = RequestMethod.POST, consumes = "multipart/form-data")
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-	public AllTypes createAllTypes(@RequestBody AllTypes allTypes) {
+public AllTypes createAllTypes(@RequestPart("wm_data_json") AllTypes allTypes, @RequestPart(value = "blobCol", required = false) MultipartFile _blobCol) {
 		LOGGER.debug("Create AllTypes with information: {}" , allTypes);
 
+    allTypes.setBlobCol(WMMultipartUtils.toByteArray(_blobCol));
 		allTypes = allTypesService.create(allTypes);
 		LOGGER.debug("Created AllTypes with information: {}" , allTypes);
 
 	    return allTypes;
 	}
-
-	@ApiOperation(value = "Creates a new AllTypes instance.This API should be used when the AllTypes instance has fields that requires multipart data.")
-	@RequestMapping(method = RequestMethod.POST, consumes = {"multipart/form-data"})
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public AllTypes createAllTypes(MultipartHttpServletRequest multipartHttpServletRequest) {
-    	AllTypes allTypes = WMMultipartUtils.toObject(multipartHttpServletRequest, AllTypes.class, "dbscenarios"); 
-        LOGGER.debug("Creating a new AllTypes with information: {}" , allTypes);
-        return allTypesService.create(allTypes);
-    }
-
 
     @ApiOperation(value = "Returns the AllTypes instance associated with the given id.")
     @RequestMapping(value = "/{id:.+}", method = RequestMethod.GET)

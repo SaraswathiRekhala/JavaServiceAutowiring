@@ -23,7 +23,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
@@ -60,26 +62,21 @@ public class BlobtypesController {
 	private BlobtypesService blobtypesService;
 
 	@ApiOperation(value = "Creates a new Blobtypes instance.")
-	@RequestMapping(method = RequestMethod.POST)
+@RequestMapping(method = RequestMethod.POST, consumes = "multipart/form-data")
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-	public Blobtypes createBlobtypes(@RequestBody Blobtypes blobtypes) {
+public Blobtypes createBlobtypes(@RequestPart("wm_data_json") Blobtypes blobtypes, @RequestPart(value = "blobType1", required = false) MultipartFile _blobType1, @RequestPart(value = "blobType2", required = false) MultipartFile _blobType2, @RequestPart(value = "blobType3", required = false) MultipartFile _blobType3, @RequestPart(value = "blobType4", required = false) MultipartFile _blobType4, @RequestPart(value = "blobType5", required = false) MultipartFile _blobType5) {
 		LOGGER.debug("Create Blobtypes with information: {}" , blobtypes);
 
+    blobtypes.setBlobType1(WMMultipartUtils.toByteArray(_blobType1));
+    blobtypes.setBlobType2(WMMultipartUtils.toByteArray(_blobType2));
+    blobtypes.setBlobType3(WMMultipartUtils.toByteArray(_blobType3));
+    blobtypes.setBlobType4(WMMultipartUtils.toByteArray(_blobType4));
+    blobtypes.setBlobType5(WMMultipartUtils.toByteArray(_blobType5));
 		blobtypes = blobtypesService.create(blobtypes);
 		LOGGER.debug("Created Blobtypes with information: {}" , blobtypes);
 
 	    return blobtypes;
 	}
-
-	@ApiOperation(value = "Creates a new Blobtypes instance.This API should be used when the Blobtypes instance has fields that requires multipart data.")
-	@RequestMapping(method = RequestMethod.POST, consumes = {"multipart/form-data"})
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Blobtypes createBlobtypes(MultipartHttpServletRequest multipartHttpServletRequest) {
-    	Blobtypes blobtypes = WMMultipartUtils.toObject(multipartHttpServletRequest, Blobtypes.class, "dbscenarios"); 
-        LOGGER.debug("Creating a new Blobtypes with information: {}" , blobtypes);
-        return blobtypesService.create(blobtypes);
-    }
-
 
     @ApiOperation(value = "Returns the Blobtypes instance associated with the given id.")
     @RequestMapping(value = "/{id:.+}", method = RequestMethod.GET)

@@ -2,6 +2,25 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
+    <sql-query name="SV_GetAllTypes">
+        <![CDATA[
+        select * from `ALL TYPES`
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_GetAllTypes__count">
+        <![CDATA[
+        select count(*) from (select * from `ALL TYPES`) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_GetAllTypes__identifier">
+        <![CDATA[
+        select * from (select * from `ALL TYPES`) wmTempTable where `PK ID`=:pkId
+        ]]>
+    <query-param name="pkId" type="java.lang.Integer"/>
+    </sql-query>
+
     <sql-query name="SV_InsertWithBlob">
         <![CDATA[
         insert into `ALL TYPES`(`BYTE COL`,`SHORT COL`,`INT COL`,`FLOAT COL`,`LONG COL`,`DOUBLE COL`,`BIGINT COL`,`BIGDEC COL`,`CHAR COL`,`STRING COL`,`TEXT COL`,`CLOB COL`,`DATE COL`,`TIME COL`,`DATETIME COL`,`TIMESTAMP COL`,`BOOLEAN COL`,`BLOB COL`) values(:BYTECOL,:SHORTCOL,:INTCOL,:FLOATCOL,:LONGCOL,:DOUBLECOL,:BIGINTCOL,:BIGDECCOL,:CHARCOL,:STRINGCOL,:TEXTCOL,:CLOBCOL,:DATECOL,:TIMECOL,:DATETIMECOL,:TIMESTAMPCOL,:BOOLEANCOL,:BLOBCOL)
@@ -26,25 +45,6 @@
     <query-param name="BLOBCOL" type="byte[]"/>
     </sql-query>
 
-    <sql-query name="SV_GetAllTypes">
-        <![CDATA[
-        select * from `ALL TYPES`
-        ]]>
-    </sql-query>
-
-    <sql-query name="SV_GetAllTypes__count">
-        <![CDATA[
-        select count(*) from (select * from `ALL TYPES`) wmTempTable
-        ]]>
-    </sql-query>
-
-    <sql-query name="SV_GetAllTypes__identifier">
-        <![CDATA[
-        select * from (select * from `ALL TYPES`) wmTempTable where `PK ID`=:pkId
-        ]]>
-    <query-param name="pkId" type="java.lang.Integer"/>
-    </sql-query>
-
     <sql-query name="SV_GetAllTypesSingle">
         <![CDATA[
         select * from `ALL TYPES`
@@ -57,16 +57,23 @@
         ]]>
     </sql-query>
 
-    <sql-query name="SV_GetLoggedInIdByPkId">
+    <sql-query name="SV_AllTypesWithoutSpace">
         <![CDATA[
-        select * from `ALL TYPES` where `PK ID`=:__SERVER__USER_ID__USER_ID
+        select * from AllTypesWithoutSpace
         ]]>
     </sql-query>
 
-    <sql-query name="SV_GetLoggedInIdByPkId__count">
+    <sql-query name="SV_AllTypesWithoutSpace__count">
         <![CDATA[
-        select count(*) from (select * from `ALL TYPES` where `PK ID`=:__SERVER__USER_ID__USER_ID) wmTempTable
+        select count(*) from (select * from AllTypesWithoutSpace) wmTempTable
         ]]>
+    </sql-query>
+
+    <sql-query name="SV_AllTypesWithoutSpace__identifier">
+        <![CDATA[
+        select * from (select * from AllTypesWithoutSpace) wmTempTable where `PKID`=:pkid
+        ]]>
+    <query-param name="pkid" type="java.lang.Integer"/>
     </sql-query>
 
     <sql-query name="SV_InsertQuery">
@@ -92,34 +99,31 @@
     <query-param name="BOOLEANCOL" type="java.lang.Boolean"/>
     </sql-query>
 
-    <sql-query name="SV_AllTypesWithoutSpace">
+    <sql-query name="SV_GetLoggedInIdByPkId">
         <![CDATA[
-        select * from AllTypesWithoutSpace
+        select * from `ALL TYPES` where `PK ID`=:SERVER__USER_ID__loggedInId
         ]]>
+    <query-param name="SERVER__USER_ID__loggedInId" type="java.lang.Integer"/>
     </sql-query>
 
-    <sql-query name="SV_AllTypesWithoutSpace__count">
+    <sql-query name="SV_GetLoggedInIdByPkId__count">
         <![CDATA[
-        select count(*) from (select * from AllTypesWithoutSpace) wmTempTable
+        select count(*) from (select * from `ALL TYPES` where `PK ID`=:SERVER__USER_ID__loggedInId) wmTempTable
         ]]>
-    </sql-query>
-
-    <sql-query name="SV_AllTypesWithoutSpace__identifier">
-        <![CDATA[
-        select * from (select * from AllTypesWithoutSpace) wmTempTable where `PKID`=:pkid
-        ]]>
-    <query-param name="pkid" type="java.lang.Integer"/>
+    <query-param name="SERVER__USER_ID__loggedInId" type="java.lang.Integer"/>
     </sql-query>
 
     <sql-query name="SV_GetByLoggedInId">
         <![CDATA[
-        select * from `ALL TYPES` where `BYTE COL`=:__SERVER__USER_ID__USER_ID
+        select * from `ALL TYPES` where `BYTE COL`=:SERVER__USER_ID__loggedInId
         ]]>
+    <query-param name="SERVER__USER_ID__loggedInId" type="java.lang.Integer"/>
     </sql-query>
 
     <sql-query name="SV_GetByLoggedInId__count">
         <![CDATA[
-        select count(*) from (select * from `ALL TYPES` where `BYTE COL`=:__SERVER__USER_ID__USER_ID) wmTempTable
+        select count(*) from (select * from `ALL TYPES` where `BYTE COL`=:SERVER__USER_ID__loggedInId) wmTempTable
         ]]>
+    <query-param name="SERVER__USER_ID__loggedInId" type="java.lang.Integer"/>
     </sql-query>
 </hibernate-mapping>

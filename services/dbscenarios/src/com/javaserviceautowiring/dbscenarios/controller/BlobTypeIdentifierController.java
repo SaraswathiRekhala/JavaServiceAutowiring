@@ -23,7 +23,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
@@ -60,26 +62,17 @@ public class BlobTypeIdentifierController {
 	private BlobTypeIdentifierService blobTypeIdentifierService;
 
 	@ApiOperation(value = "Creates a new BlobTypeIdentifier instance.")
-	@RequestMapping(method = RequestMethod.POST)
+@RequestMapping(method = RequestMethod.POST, consumes = "multipart/form-data")
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-	public BlobTypeIdentifier createBlobTypeIdentifier(@RequestBody BlobTypeIdentifier blobTypeIdentifier) {
+public BlobTypeIdentifier createBlobTypeIdentifier(@RequestPart("wm_data_json") BlobTypeIdentifier blobTypeIdentifier, @RequestPart(value = "column2", required = false) MultipartFile _column2) {
 		LOGGER.debug("Create BlobTypeIdentifier with information: {}" , blobTypeIdentifier);
 
+    blobTypeIdentifier.setColumn2(WMMultipartUtils.toByteArray(_column2));
 		blobTypeIdentifier = blobTypeIdentifierService.create(blobTypeIdentifier);
 		LOGGER.debug("Created BlobTypeIdentifier with information: {}" , blobTypeIdentifier);
 
 	    return blobTypeIdentifier;
 	}
-
-	@ApiOperation(value = "Creates a new BlobTypeIdentifier instance.This API should be used when the BlobTypeIdentifier instance has fields that requires multipart data.")
-	@RequestMapping(method = RequestMethod.POST, consumes = {"multipart/form-data"})
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public BlobTypeIdentifier createBlobTypeIdentifier(MultipartHttpServletRequest multipartHttpServletRequest) {
-    	BlobTypeIdentifier blobTypeIdentifier = WMMultipartUtils.toObject(multipartHttpServletRequest, BlobTypeIdentifier.class, "dbscenarios"); 
-        LOGGER.debug("Creating a new BlobTypeIdentifier with information: {}" , blobTypeIdentifier);
-        return blobTypeIdentifierService.create(blobTypeIdentifier);
-    }
-
 
     @ApiOperation(value = "Returns the BlobTypeIdentifier instance associated with the given id.")
     @RequestMapping(value = "/{id:.+}", method = RequestMethod.GET)

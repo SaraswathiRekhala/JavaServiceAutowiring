@@ -25,72 +25,82 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 @Table(name = "`BLOBTYPES`")
 public class Blobtypes implements Serializable {
 
-    private Integer pkid;
+    private Integer pkId;
     @JsonProperty(access = Access.READ_ONLY)
-    private byte[] blobcol1;
+    private byte[] blobType1;
     @JsonProperty(access = Access.READ_ONLY)
-    private byte[] blobcol2;
+    private byte[] blobType2;
     @JsonProperty(access = Access.READ_ONLY)
-    private byte[] blobcol3;
+    private byte[] blobType3;
     @JsonProperty(access = Access.READ_ONLY)
-    private byte[] blobcol4;
+    private byte[] blobType4;
     @JsonProperty(access = Access.READ_ONLY)
-    private byte[] blobcol5;
+    private byte[] blobType5;
+    private Boolean booleanCol;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "`PKID`", nullable = false, scale = 0, precision = 10)
-    public Integer getPkid() {
-        return this.pkid;
+    @Column(name = "`PK ID`", nullable = false, scale = 0, precision = 10)
+    public Integer getPkId() {
+        return this.pkId;
     }
 
-    public void setPkid(Integer pkid) {
-        this.pkid = pkid;
+    public void setPkId(Integer pkId) {
+        this.pkId = pkId;
     }
 
-    @Column(name = "`BLOBCOL1`", nullable = true)
-    public byte[] getBlobcol1() {
-        return this.blobcol1;
+    @Column(name = "`BLOB TYPE1`", nullable = true)
+    public byte[] getBlobType1() {
+        return this.blobType1;
     }
 
-    public void setBlobcol1(byte[] blobcol1) {
-        this.blobcol1 = blobcol1;
+    public void setBlobType1(byte[] blobType1) {
+        this.blobType1 = blobType1;
     }
 
-    @Column(name = "`BLOBCOL2`", nullable = true)
-    public byte[] getBlobcol2() {
-        return this.blobcol2;
+    @Column(name = "`BLOB TYPE2`", nullable = true)
+    public byte[] getBlobType2() {
+        return this.blobType2;
     }
 
-    public void setBlobcol2(byte[] blobcol2) {
-        this.blobcol2 = blobcol2;
+    public void setBlobType2(byte[] blobType2) {
+        this.blobType2 = blobType2;
     }
 
-    @Column(name = "`BLOBCOL3`", nullable = true)
-    public byte[] getBlobcol3() {
-        return this.blobcol3;
+    @Column(name = "`BLOB TYPE3`", nullable = true)
+    public byte[] getBlobType3() {
+        return this.blobType3;
     }
 
-    public void setBlobcol3(byte[] blobcol3) {
-        this.blobcol3 = blobcol3;
+    public void setBlobType3(byte[] blobType3) {
+        this.blobType3 = blobType3;
     }
 
-    @Column(name = "`BLOBCOL4`", nullable = true)
-    public byte[] getBlobcol4() {
-        return this.blobcol4;
+    @Column(name = "`BLOB TYPE4`", nullable = true)
+    public byte[] getBlobType4() {
+        return this.blobType4;
     }
 
-    public void setBlobcol4(byte[] blobcol4) {
-        this.blobcol4 = blobcol4;
+    public void setBlobType4(byte[] blobType4) {
+        this.blobType4 = blobType4;
     }
 
-    @Column(name = "`BLOBCOL5`", nullable = true)
-    public byte[] getBlobcol5() {
-        return this.blobcol5;
+    @Column(name = "`BLOB TYPE5`", nullable = true)
+    public byte[] getBlobType5() {
+        return this.blobType5;
     }
 
-    public void setBlobcol5(byte[] blobcol5) {
-        this.blobcol5 = blobcol5;
+    public void setBlobType5(byte[] blobType5) {
+        this.blobType5 = blobType5;
+    }
+
+    @Column(name = "`BOOLEAN COL`", nullable = true)
+    public Boolean getBooleanCol() {
+        return this.booleanCol;
+    }
+
+    public void setBooleanCol(Boolean booleanCol) {
+        this.booleanCol = booleanCol;
     }
 
 
@@ -99,12 +109,12 @@ public class Blobtypes implements Serializable {
         if (this == o) return true;
         if (!(o instanceof Blobtypes)) return false;
         final Blobtypes blobtypes = (Blobtypes) o;
-        return Objects.equals(getPkid(), blobtypes.getPkid());
+        return Objects.equals(getPkId(), blobtypes.getPkId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getPkid());
+        return Objects.hash(getPkId());
     }
 }
 

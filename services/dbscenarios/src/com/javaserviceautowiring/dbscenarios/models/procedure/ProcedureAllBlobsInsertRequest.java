@@ -7,9 +7,16 @@ package com.javaserviceautowiring.dbscenarios.models.procedure;
 
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.sql.Date;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
+
+import org.joda.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;

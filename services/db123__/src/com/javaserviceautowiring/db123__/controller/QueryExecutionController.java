@@ -30,6 +30,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.wavemaker.commons.json.views.JsonViews.BlobAsUrlView;
 import com.wavemaker.runtime.data.dao.query.WMQueryExecutor;
 import com.wavemaker.runtime.data.exception.BlobContentNotFoundException;
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
@@ -54,6 +56,7 @@ public class QueryExecutionController {
     @Autowired
     private Db123__QueryExecutorService queryService;
 
+    @JsonView(BlobAsUrlView.class)
     @RequestMapping(value = "/queries/SV_DefaultValues", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "Default Values")

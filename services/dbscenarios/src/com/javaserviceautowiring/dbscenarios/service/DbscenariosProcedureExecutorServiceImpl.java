@@ -32,28 +32,39 @@ public class DbscenariosProcedureExecutorServiceImpl implements DbscenariosProce
 
     @Transactional(value = "dbscenariosTransactionManager")
     @Override
-    public Void executeProcedure_AllBlobsInsert(ProcedureAllBlobsInsertRequest procedureAllBlobsInsertRequest) {
-        Map params = new HashMap(6);
+    public ProcedureInsertAndGetQueryResponse executeProcedure_InsertAndGetQuery(ProcedureInsertAndGetQueryRequest procedureInsertAndGetQueryRequest) {
+        Map params = new HashMap(18);
 
-        params.put("BLOBTYPE1", procedureAllBlobsInsertRequest.getBlobtype1());
-        params.put("BLOBTYPE2", procedureAllBlobsInsertRequest.getBlobtype2());
-        params.put("BLOBTYPE3", procedureAllBlobsInsertRequest.getBlobtype3());
-        params.put("BLOBTYPE4", procedureAllBlobsInsertRequest.getBlobtype4());
-        params.put("BLOBTYPE5", procedureAllBlobsInsertRequest.getBlobtype5());
-        params.put("BOOLEANCOL", procedureAllBlobsInsertRequest.getBooleancol());
+        params.put("BYTECOL", procedureInsertAndGetQueryRequest.getBytecol());
+        params.put("SHORTCOL", procedureInsertAndGetQueryRequest.getShortcol());
+        params.put("INTCOL", procedureInsertAndGetQueryRequest.getIntcol());
+        params.put("LONGCOL", procedureInsertAndGetQueryRequest.getLongcol());
+        params.put("FLOATCOL", procedureInsertAndGetQueryRequest.getFloatcol());
+        params.put("DOUBLECOL", procedureInsertAndGetQueryRequest.getDoublecol());
+        params.put("BIGDECCOL", procedureInsertAndGetQueryRequest.getBigdeccol());
+        params.put("BIGINTCOL", procedureInsertAndGetQueryRequest.getBigintcol());
+        params.put("CHARCOL", procedureInsertAndGetQueryRequest.getCharcol());
+        params.put("STRINGCOL", procedureInsertAndGetQueryRequest.getStringcol());
+        params.put("CLOBCOL", procedureInsertAndGetQueryRequest.getClobcol());
+        params.put("TEXTCOL", procedureInsertAndGetQueryRequest.getTextcol());
+        params.put("DATECOL", procedureInsertAndGetQueryRequest.getDatecol());
+        params.put("TIMECOL", procedureInsertAndGetQueryRequest.getTimecol());
+        params.put("DATETIMECOL", procedureInsertAndGetQueryRequest.getDatetimecol());
+        params.put("TIMESTAMPCOL", procedureInsertAndGetQueryRequest.getTimestampcol());
+        params.put("BOOLEANCOL", procedureInsertAndGetQueryRequest.getBooleancol());
+        params.put("BLOBCOL", procedureInsertAndGetQueryRequest.getBlobcol());
 
-        return procedureExecutor.executeNamedProcedure("Procedure_AllBlobsInsert", params, Void.class);
+        return procedureExecutor.executeNamedProcedure("Procedure_InsertAndGetQuery", params, ProcedureInsertAndGetQueryResponse.class);
     }
 
     @Transactional(value = "dbscenariosTransactionManager")
     @Override
-    public Void executeProcedure_InBlob2(ProcedureInBlob2Request procedureInBlob2request) {
-        Map params = new HashMap(2);
+    public Void executeProcedure_SingleBlobInsert(ProcedureSingleBlobInsertRequest procedureSingleBlobInsertRequest) {
+        Map params = new HashMap(1);
 
-        params.put("BLOBCOL", procedureInBlob2request.getBlobcol());
-        params.put("DESCRIPTION", procedureInBlob2request.getDescription());
+        params.put("BLOBCOL", procedureSingleBlobInsertRequest.getBlobcol());
 
-        return procedureExecutor.executeNamedProcedure("Procedure_InBlob2", params, Void.class);
+        return procedureExecutor.executeNamedProcedure("Procedure_SingleBlobInsert", params, Void.class);
     }
 
     @Transactional(value = "dbscenariosTransactionManager")
@@ -81,43 +92,6 @@ public class DbscenariosProcedureExecutorServiceImpl implements DbscenariosProce
         params.put("BLOBCOL", procedureGetAllTypesWithAliasesInsertQueryRequest.getBlobcol());
 
         return procedureExecutor.executeNamedProcedure("Procedure_getAllTypesWithAliases_InsertQuery", params, ProcedureGetAllTypesWithAliasesInsertQueryResponse.class);
-    }
-
-    @Transactional(value = "dbscenariosTransactionManager")
-    @Override
-    public Void executeProcedure_SingleBlobInsert(ProcedureSingleBlobInsertRequest procedureSingleBlobInsertRequest) {
-        Map params = new HashMap(1);
-
-        params.put("BLOBCOL", procedureSingleBlobInsertRequest.getBlobcol());
-
-        return procedureExecutor.executeNamedProcedure("Procedure_SingleBlobInsert", params, Void.class);
-    }
-
-    @Transactional(value = "dbscenariosTransactionManager")
-    @Override
-    public ProcedureInsertAndGetQueryResponse executeProcedure_InsertAndGetQuery(ProcedureInsertAndGetQueryRequest procedureInsertAndGetQueryRequest) {
-        Map params = new HashMap(18);
-
-        params.put("BYTECOL", procedureInsertAndGetQueryRequest.getBytecol());
-        params.put("SHORTCOL", procedureInsertAndGetQueryRequest.getShortcol());
-        params.put("INTCOL", procedureInsertAndGetQueryRequest.getIntcol());
-        params.put("LONGCOL", procedureInsertAndGetQueryRequest.getLongcol());
-        params.put("FLOATCOL", procedureInsertAndGetQueryRequest.getFloatcol());
-        params.put("DOUBLECOL", procedureInsertAndGetQueryRequest.getDoublecol());
-        params.put("BIGDECCOL", procedureInsertAndGetQueryRequest.getBigdeccol());
-        params.put("BIGINTCOL", procedureInsertAndGetQueryRequest.getBigintcol());
-        params.put("CHARCOL", procedureInsertAndGetQueryRequest.getCharcol());
-        params.put("STRINGCOL", procedureInsertAndGetQueryRequest.getStringcol());
-        params.put("CLOBCOL", procedureInsertAndGetQueryRequest.getClobcol());
-        params.put("TEXTCOL", procedureInsertAndGetQueryRequest.getTextcol());
-        params.put("DATECOL", procedureInsertAndGetQueryRequest.getDatecol());
-        params.put("TIMECOL", procedureInsertAndGetQueryRequest.getTimecol());
-        params.put("DATETIMECOL", procedureInsertAndGetQueryRequest.getDatetimecol());
-        params.put("TIMESTAMPCOL", procedureInsertAndGetQueryRequest.getTimestampcol());
-        params.put("BOOLEANCOL", procedureInsertAndGetQueryRequest.getBooleancol());
-        params.put("BLOBCOL", procedureInsertAndGetQueryRequest.getBlobcol());
-
-        return procedureExecutor.executeNamedProcedure("Procedure_InsertAndGetQuery", params, ProcedureInsertAndGetQueryResponse.class);
     }
 
     @Transactional(value = "dbscenariosTransactionManager")
@@ -159,6 +133,32 @@ public class DbscenariosProcedureExecutorServiceImpl implements DbscenariosProce
         params.put("BLOBCOL", procedureGetAllTypesWithAliasesInsertQueryWithSysParamsRequest.getBlobcol());
 
         return procedureExecutor.executeNamedProcedure("Procedure_getAllTypesWithAliases_InsertQueryWithSysParams", params, ProcedureGetAllTypesWithAliasesInsertQueryWithSysParamsResponse.class);
+    }
+
+    @Transactional(value = "dbscenariosTransactionManager")
+    @Override
+    public Void executeProcedure_InBlob2(ProcedureInBlob2Request procedureInBlob2request) {
+        Map params = new HashMap(2);
+
+        params.put("BLOBCOL", procedureInBlob2request.getBlobcol());
+        params.put("DESCRIPTION", procedureInBlob2request.getDescription());
+
+        return procedureExecutor.executeNamedProcedure("Procedure_InBlob2", params, Void.class);
+    }
+
+    @Transactional(value = "dbscenariosTransactionManager")
+    @Override
+    public Void executeProcedure_AllBlobsInsert(ProcedureAllBlobsInsertRequest procedureAllBlobsInsertRequest) {
+        Map params = new HashMap(6);
+
+        params.put("BLOBTYPE1", procedureAllBlobsInsertRequest.getBlobtype1());
+        params.put("BLOBTYPE2", procedureAllBlobsInsertRequest.getBlobtype2());
+        params.put("BLOBTYPE3", procedureAllBlobsInsertRequest.getBlobtype3());
+        params.put("BLOBTYPE4", procedureAllBlobsInsertRequest.getBlobtype4());
+        params.put("BLOBTYPE5", procedureAllBlobsInsertRequest.getBlobtype5());
+        params.put("BOOLEANCOL", procedureAllBlobsInsertRequest.getBooleancol());
+
+        return procedureExecutor.executeNamedProcedure("Procedure_AllBlobsInsert", params, Void.class);
     }
 
 }

@@ -15,6 +15,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 
 import com.wavemaker.runtime.data.dao.WMGenericDao;
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
@@ -32,6 +33,7 @@ import com.javaserviceautowiring.db123__.DefaultValues;
  * @see DefaultValues
  */
 @Service("db123__.DefaultValuesService")
+@Validated
 public class DefaultValuesServiceImpl implements DefaultValuesService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DefaultValuesServiceImpl.class);

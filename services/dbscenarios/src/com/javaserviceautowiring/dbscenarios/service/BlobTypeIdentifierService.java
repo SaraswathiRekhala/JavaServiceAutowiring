@@ -7,6 +7,8 @@ package com.javaserviceautowiring.dbscenarios.service;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -31,7 +33,7 @@ public interface BlobTypeIdentifierService {
      * @param blobTypeIdentifier Details of the BlobTypeIdentifier to be created; value cannot be null.
      * @return The newly created BlobTypeIdentifier.
      */
-	BlobTypeIdentifier create(BlobTypeIdentifier blobTypeIdentifier);
+	BlobTypeIdentifier create(@Valid BlobTypeIdentifier blobTypeIdentifier);
 
 
 	/**
@@ -61,7 +63,7 @@ public interface BlobTypeIdentifierService {
 	 * @return The updated BlobTypeIdentifier.
 	 * @throws EntityNotFoundException if no BlobTypeIdentifier is found with given input.
 	 */
-	BlobTypeIdentifier update(BlobTypeIdentifier blobTypeIdentifier) throws EntityNotFoundException;
+	BlobTypeIdentifier update(@Valid BlobTypeIdentifier blobTypeIdentifier) throws EntityNotFoundException;
 
     /**
 	 * Deletes an existing BlobTypeIdentifier with the given id.

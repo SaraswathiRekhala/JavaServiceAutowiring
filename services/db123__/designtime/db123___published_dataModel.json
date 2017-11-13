@@ -7,11 +7,12 @@
     "catalog" : "123-@",
     "columns" : [ {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "assignedId",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -33,11 +34,12 @@
       "unique" : true
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "1"
+        "defaultValue" : "1",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "byteCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -59,11 +61,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "12"
+        "defaultValue" : "12",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "shortCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -85,11 +88,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "121"
+        "defaultValue" : "121",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "intCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -111,11 +115,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "112.121"
+        "defaultValue" : "112.121",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "floatCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -137,11 +142,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "122121"
+        "defaultValue" : "122121",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "longCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -163,11 +169,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "121221.1221"
+        "defaultValue" : "121221.1221",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "doubleCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -189,11 +196,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "1221212"
+        "defaultValue" : "1221212",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "bigintCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -215,11 +223,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "21289.01829"
+        "defaultValue" : "21289.01829",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "bigdecCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -241,11 +250,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "22"
+        "defaultValue" : "22",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "charCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -267,11 +277,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "TESTING SAMPLE"
+        "defaultValue" : "TESTING SAMPLE",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "stringCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -293,11 +304,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "textCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -319,11 +331,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "clobCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -345,11 +358,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "2017-05-09"
+        "defaultValue" : "2017-05-09",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "dateCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -371,11 +385,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "2017-05-09T16:27:05"
+        "defaultValue" : "2017-05-09T16:27:05",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "datetimeCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -397,11 +412,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "16:27:08"
+        "defaultValue" : "16:27:08",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "timeCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -423,11 +439,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "2017-05-09T16:27:12"
+        "defaultValue" : "2017-05-09T16:27:12",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "timestampCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -449,11 +466,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "1"
+        "defaultValue" : "1",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "booleanCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -475,11 +493,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "blobCol",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -523,20 +542,21 @@
     "catalog" : "123-@",
     "columns" : [ {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
-      "fieldName" : "pkid",
+      "constraintList" : null,
+      "fieldName" : "pkId",
       "foreignKey" : false,
       "generatorType" : "identity",
       "generatorValue" : null,
       "javaType" : "integer",
       "length" : 0,
-      "name" : "PKID",
+      "name" : "PK ID",
       "nullable" : false,
-      "oldName" : "PKID",
+      "oldName" : "PK ID",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : true,
@@ -549,20 +569,21 @@
       "unique" : true
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
-      "fieldName" : "blobcol1",
+      "constraintList" : null,
+      "fieldName" : "blobType1",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "blob",
       "length" : -1,
-      "name" : "BLOBCOL1",
+      "name" : "BLOB TYPE1",
       "nullable" : true,
-      "oldName" : "BLOBCOL1",
+      "oldName" : "BLOB TYPE1",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
@@ -575,20 +596,21 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
-      "fieldName" : "blobcol2",
+      "constraintList" : null,
+      "fieldName" : "blobType2",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "blob",
       "length" : -1,
-      "name" : "BLOBCOL2",
+      "name" : "BLOB TYPE2",
       "nullable" : true,
-      "oldName" : "BLOBCOL2",
+      "oldName" : "BLOB TYPE2",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
@@ -601,20 +623,21 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
-      "fieldName" : "blobcol3",
+      "constraintList" : null,
+      "fieldName" : "blobType3",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "blob",
       "length" : -1,
-      "name" : "BLOBCOL3",
+      "name" : "BLOB TYPE3",
       "nullable" : true,
-      "oldName" : "BLOBCOL3",
+      "oldName" : "BLOB TYPE3",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
@@ -627,20 +650,21 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
-      "fieldName" : "blobcol4",
+      "constraintList" : null,
+      "fieldName" : "blobType4",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "blob",
       "length" : -1,
-      "name" : "BLOBCOL4",
+      "name" : "BLOB TYPE4",
       "nullable" : true,
-      "oldName" : "BLOBCOL4",
+      "oldName" : "BLOB TYPE4",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
@@ -653,20 +677,21 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
-      "fieldName" : "blobcol5",
+      "constraintList" : null,
+      "fieldName" : "blobType5",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "blob",
       "length" : -1,
-      "name" : "BLOBCOL5",
+      "name" : "BLOB TYPE5",
       "nullable" : true,
-      "oldName" : "BLOBCOL5",
+      "oldName" : "BLOB TYPE5",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
@@ -676,6 +701,33 @@
       "scale" : 0,
       "sequenceSchema" : null,
       "sqlType" : "blob",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : null,
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "booleanCol",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "boolean",
+      "length" : 0,
+      "name" : "BOOLEAN COL",
+      "nullable" : true,
+      "oldName" : "BOOLEAN COL",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "boolean",
       "unique" : false
     } ],
     "constraints" : [ ],
@@ -684,7 +736,7 @@
     "name" : "BLOBTYPES",
     "oldName" : "BLOBTYPES",
     "primaryKey" : {
-      "columns" : [ "PKID" ],
+      "columns" : [ "PK ID" ],
       "composite" : false,
       "generator" : {
         "generatorType" : "identity",

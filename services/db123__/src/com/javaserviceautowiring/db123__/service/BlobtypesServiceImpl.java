@@ -15,6 +15,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 
 import com.wavemaker.runtime.data.dao.WMGenericDao;
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
@@ -32,6 +33,7 @@ import com.javaserviceautowiring.db123__.Blobtypes;
  * @see Blobtypes
  */
 @Service("db123__.BlobtypesService")
+@Validated
 public class BlobtypesServiceImpl implements BlobtypesService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BlobtypesServiceImpl.class);
@@ -79,7 +81,7 @@ public class BlobtypesServiceImpl implements BlobtypesService {
         LOGGER.debug("Updating Blobtypes with information: {}", blobtypes);
         this.wmGenericDao.update(blobtypes);
 
-        Integer blobtypesId = blobtypes.getPkid();
+        Integer blobtypesId = blobtypes.getPkId();
 
         return this.wmGenericDao.findById(blobtypesId);
     }

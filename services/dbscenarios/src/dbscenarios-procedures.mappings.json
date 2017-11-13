@@ -1,84 +1,13 @@
 {
-  "Procedure_AllBlobsInsert" : {
-    "procedureString" : "CALL insertAllBlobsOnly(?,?,?,?,?,?)",
-    "parameters" : [ {
-      "name" : "BLOBTYPE1",
-      "type" : "blob",
-      "list" : false,
-      "variableType" : "PROMPT",
-      "testValue" : { },
-      "required" : true,
-      "parameterType" : "IN"
-    }, {
-      "name" : "BLOBTYPE2",
-      "type" : "blob",
-      "list" : false,
-      "variableType" : "PROMPT",
-      "testValue" : { },
-      "required" : true,
-      "parameterType" : "IN"
-    }, {
-      "name" : "BLOBTYPE3",
-      "type" : "blob",
-      "list" : false,
-      "variableType" : "PROMPT",
-      "testValue" : { },
-      "required" : true,
-      "parameterType" : "IN"
-    }, {
-      "name" : "BLOBTYPE4",
-      "type" : "blob",
-      "list" : false,
-      "variableType" : "PROMPT",
-      "testValue" : { },
-      "required" : true,
-      "parameterType" : "IN"
-    }, {
-      "name" : "BLOBTYPE5",
-      "type" : "blob",
-      "list" : false,
-      "variableType" : "PROMPT",
-      "testValue" : { },
-      "required" : true,
-      "parameterType" : "IN"
-    }, {
-      "name" : "BOOLEANCOL",
-      "type" : "boolean",
-      "list" : false,
-      "variableType" : "PROMPT",
-      "testValue" : true,
-      "required" : true,
-      "parameterType" : "IN"
-    } ]
-  },
-  "Procedure_InBlob2" : {
-    "procedureString" : "CALL inBlob2(?,?)",
-    "parameters" : [ {
-      "name" : "BLOBCOL",
-      "type" : "blob",
-      "list" : false,
-      "variableType" : "PROMPT",
-      "testValue" : { },
-      "required" : true,
-      "parameterType" : "IN"
-    }, {
-      "name" : "DESCRIPTION",
-      "type" : "string",
-      "list" : false,
-      "variableType" : "PROMPT",
-      "testValue" : "jdfhjhdsjfhkj",
-      "required" : true,
-      "parameterType" : "IN"
-    } ]
-  },
-  "Procedure_getAllTypesWithAliases_InsertQuery" : {
+  "Procedure_InsertAndGetQuery" : {
     "procedureString" : "CALL getAllTypesWithAliases_InsertQuery(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
     "parameters" : [ {
       "name" : "BYTECOL",
       "type" : "byte",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "22",
+      "variableName" : null,
+      "testValue" : "8",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -86,7 +15,8 @@
       "type" : "short",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "425",
+      "variableName" : null,
+      "testValue" : "879",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -94,7 +24,8 @@
       "type" : "integer",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "425",
+      "variableName" : null,
+      "testValue" : "8796",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -102,7 +33,8 @@
       "type" : "long",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "245",
+      "variableName" : null,
+      "testValue" : "789",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -110,7 +42,8 @@
       "type" : "float",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "4215.2145",
+      "variableName" : null,
+      "testValue" : "789.789",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -118,7 +51,8 @@
       "type" : "double",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "4215.245",
+      "variableName" : null,
+      "testValue" : "879",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -126,7 +60,8 @@
       "type" : "big_decimal",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "245.2415",
+      "variableName" : null,
+      "testValue" : "678.987978",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -134,7 +69,8 @@
       "type" : "big_integer",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "78412",
+      "variableName" : null,
+      "testValue" : "787",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -142,7 +78,8 @@
       "type" : "character",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "g",
+      "variableName" : null,
+      "testValue" : "m",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -150,7 +87,8 @@
       "type" : "string",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "dfsgs",
+      "variableName" : null,
+      "testValue" : "retert",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -158,7 +96,8 @@
       "type" : "string",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "fdsf",
+      "variableName" : null,
+      "testValue" : "ertewrt",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -166,7 +105,8 @@
       "type" : "string",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "gdsffds",
+      "variableName" : null,
+      "testValue" : "reterwt",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -174,6 +114,7 @@
       "type" : "date",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "2017-06-19",
       "required" : true,
       "parameterType" : "IN"
@@ -182,7 +123,8 @@
       "type" : "time",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "14:31:50",
+      "variableName" : null,
+      "testValue" : "09:32:00",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -190,7 +132,8 @@
       "type" : "datetime",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "2017-06-19T14:31:44",
+      "variableName" : null,
+      "testValue" : "2017-06-19T09:51:40",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -198,7 +141,8 @@
       "type" : "timestamp",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : 1497862898000,
+      "variableName" : null,
+      "testValue" : 1497891103000,
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -206,6 +150,7 @@
       "type" : "boolean",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : true,
       "required" : true,
       "parameterType" : "IN"
@@ -214,6 +159,7 @@
       "type" : "blob",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : { },
       "required" : true,
       "parameterType" : "IN"
@@ -226,19 +172,21 @@
       "type" : "blob",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : { },
       "required" : true,
       "parameterType" : "IN"
     } ]
   },
-  "Procedure_InsertAndGetQuery" : {
+  "Procedure_getAllTypesWithAliases_InsertQuery" : {
     "procedureString" : "CALL getAllTypesWithAliases_InsertQuery(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
     "parameters" : [ {
       "name" : "BYTECOL",
       "type" : "byte",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "8",
+      "variableName" : null,
+      "testValue" : "22",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -246,7 +194,8 @@
       "type" : "short",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "879",
+      "variableName" : null,
+      "testValue" : "425",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -254,7 +203,8 @@
       "type" : "integer",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "8796",
+      "variableName" : null,
+      "testValue" : "425",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -262,7 +212,8 @@
       "type" : "long",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "789",
+      "variableName" : null,
+      "testValue" : "245",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -270,7 +221,8 @@
       "type" : "float",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "789.789",
+      "variableName" : null,
+      "testValue" : "4215.2145",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -278,7 +230,8 @@
       "type" : "double",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "879",
+      "variableName" : null,
+      "testValue" : "4215.245",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -286,7 +239,8 @@
       "type" : "big_decimal",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "678.987978",
+      "variableName" : null,
+      "testValue" : "245.2415",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -294,7 +248,8 @@
       "type" : "big_integer",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "787",
+      "variableName" : null,
+      "testValue" : "78412",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -302,7 +257,8 @@
       "type" : "character",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "m",
+      "variableName" : null,
+      "testValue" : "g",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -310,7 +266,8 @@
       "type" : "string",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "retert",
+      "variableName" : null,
+      "testValue" : "dfsgs",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -318,7 +275,8 @@
       "type" : "string",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "ertewrt",
+      "variableName" : null,
+      "testValue" : "fdsf",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -326,7 +284,8 @@
       "type" : "string",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "reterwt",
+      "variableName" : null,
+      "testValue" : "gdsffds",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -334,6 +293,7 @@
       "type" : "date",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "2017-06-19",
       "required" : true,
       "parameterType" : "IN"
@@ -342,7 +302,8 @@
       "type" : "time",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "09:32:00",
+      "variableName" : null,
+      "testValue" : "14:31:50",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -350,7 +311,8 @@
       "type" : "datetime",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : "2017-06-19T09:51:40",
+      "variableName" : null,
+      "testValue" : "2017-06-19T14:31:44",
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -358,7 +320,8 @@
       "type" : "timestamp",
       "list" : false,
       "variableType" : "PROMPT",
-      "testValue" : 1497891103000,
+      "variableName" : null,
+      "testValue" : 1497862898000,
       "required" : true,
       "parameterType" : "IN"
     }, {
@@ -366,6 +329,7 @@
       "type" : "boolean",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : true,
       "required" : true,
       "parameterType" : "IN"
@@ -374,6 +338,7 @@
       "type" : "blob",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : { },
       "required" : true,
       "parameterType" : "IN"
@@ -386,6 +351,7 @@
       "type" : "date",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "2017-06-19",
       "required" : true,
       "parameterType" : "IN"
@@ -411,6 +377,7 @@
       "type" : "short",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "212",
       "required" : true,
       "parameterType" : "IN"
@@ -419,6 +386,7 @@
       "type" : "integer",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "12",
       "required" : true,
       "parameterType" : "IN"
@@ -427,6 +395,7 @@
       "type" : "long",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "2415",
       "required" : true,
       "parameterType" : "IN"
@@ -435,6 +404,7 @@
       "type" : "float",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "245.2145",
       "required" : true,
       "parameterType" : "IN"
@@ -443,6 +413,7 @@
       "type" : "double",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "4215.87856",
       "required" : true,
       "parameterType" : "IN"
@@ -451,6 +422,7 @@
       "type" : "big_decimal",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "787219.12985",
       "required" : true,
       "parameterType" : "IN"
@@ -459,6 +431,7 @@
       "type" : "big_integer",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "2454",
       "required" : true,
       "parameterType" : "IN"
@@ -467,6 +440,7 @@
       "type" : "character",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "r",
       "required" : true,
       "parameterType" : "IN"
@@ -484,6 +458,7 @@
       "type" : "string",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "fdsgfd",
       "required" : true,
       "parameterType" : "IN"
@@ -492,6 +467,7 @@
       "type" : "string",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : "fdgfdg",
       "required" : true,
       "parameterType" : "IN"
@@ -527,6 +503,7 @@
       "type" : "timestamp",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : 1497864186000,
       "required" : true,
       "parameterType" : "IN"
@@ -535,6 +512,7 @@
       "type" : "boolean",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : true,
       "required" : true,
       "parameterType" : "IN"
@@ -543,7 +521,88 @@
       "type" : "blob",
       "list" : false,
       "variableType" : "PROMPT",
+      "variableName" : null,
       "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  },
+  "Procedure_InBlob2" : {
+    "procedureString" : "CALL inBlob2(?,?)",
+    "parameters" : [ {
+      "name" : "BLOBCOL",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "DESCRIPTION",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "jdfhjhdsjfhkj",
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  },
+  "Procedure_AllBlobsInsert" : {
+    "procedureString" : "CALL insertAllBlobsOnly(?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "BLOBTYPE1",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BLOBTYPE2",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BLOBTYPE3",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BLOBTYPE4",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BLOBTYPE5",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : { },
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "BOOLEANCOL",
+      "type" : "boolean",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : true,
       "required" : true,
       "parameterType" : "IN"
     } ]

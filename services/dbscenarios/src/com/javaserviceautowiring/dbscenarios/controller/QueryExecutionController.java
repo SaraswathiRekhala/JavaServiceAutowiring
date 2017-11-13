@@ -34,6 +34,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.wavemaker.commons.json.views.JsonViews.BlobAsUrlView;
 import com.wavemaker.commons.wrapper.IntegerWrapper;
 import com.wavemaker.runtime.data.dao.query.WMQueryExecutor;
 import com.wavemaker.runtime.data.exception.BlobContentNotFoundException;
@@ -59,17 +61,7 @@ public class QueryExecutionController {
     @Autowired
     private DbscenariosQueryExecutorService queryService;
 
-    @RequestMapping(value = "/queries/SV_InsertWithBlob", method = RequestMethod.POST)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "Insert With Blob")
-    public IntegerWrapper executeSV_InsertWithBlob(@Valid @RequestPart("wm_data_json") SvInsertWithBlobRequest svInsertWithBlobRequest, @RequestPart(value = "BLOBCOL") MultipartFile blobcol, HttpServletRequest _request) {
-        LOGGER.debug("Executing named query: SV_InsertWithBlob");
-        svInsertWithBlobRequest.setBlobcol(WMMultipartUtils.toByteArray(blobcol));
-        Integer _result = queryService.executeSV_InsertWithBlob(svInsertWithBlobRequest);
-        LOGGER.debug("got the result for named query: SV_InsertWithBlob, result:{}", _result);
-        return new IntegerWrapper(_result);
-    }
-
+    @JsonView(BlobAsUrlView.class)
     @RequestMapping(value = "/queries/SV_GetAllTypes", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "Get All Types")
@@ -111,6 +103,18 @@ public class QueryExecutionController {
         return queryService.exportSV_GetAllTypes(exportType, pageable);
     }
 
+    @RequestMapping(value = "/queries/SV_InsertWithBlob", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "Insert With Blob")
+    public IntegerWrapper executeSV_InsertWithBlob(@Valid @RequestPart("wm_data_json") SvInsertWithBlobRequest svInsertWithBlobRequest, @RequestPart(value = "BLOBCOL") MultipartFile blobcol, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: SV_InsertWithBlob");
+        svInsertWithBlobRequest.setBlobcol(WMMultipartUtils.toByteArray(blobcol));
+        Integer _result = queryService.executeSV_InsertWithBlob(svInsertWithBlobRequest);
+        LOGGER.debug("got the result for named query: SV_InsertWithBlob, result:{}", _result);
+        return new IntegerWrapper(_result);
+    }
+
+    @JsonView(BlobAsUrlView.class)
     @RequestMapping(value = "/queries/SV_GetAllTypesSingle", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "GetAllTypesSingle")
@@ -138,43 +142,7 @@ public class QueryExecutionController {
         return WMMultipartUtils.buildDownloadResponse(_request, _result, downloadAsAttachment);
     }
 
-    @RequestMapping(value = "/queries/SV_GetLoggedInIdByPkId", method = RequestMethod.GET)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "GetLoggedInIdByPkId")
-    public SvGetLoggedInIdByPkIdResponse executeSV_GetLoggedInIdByPkId(HttpServletRequest _request) {
-        LOGGER.debug("Executing named query: SV_GetLoggedInIdByPkId");
-        SvGetLoggedInIdByPkIdResponse _result = queryService.executeSV_GetLoggedInIdByPkId();
-        LOGGER.debug("got the result for named query: SV_GetLoggedInIdByPkId, result:{}", _result);
-        UriComponentsBuilder _uriBuilder = ServletUriComponentsBuilder.fromRequest(_request);
-        _uriBuilder.path("/content/{_fieldName_}");
-        if(_result.getBlobCol() != null) {
-            _result.setBlobCol(_uriBuilder.buildAndExpand(Collections.singletonMap("_fieldName_", "blobCol")).toUriString().getBytes());
-        } else {
-            _result.setBlobCol(null);
-        }
-        return _result;
-    }
-
-    @ApiOperation(value = "Retrives the BLOB content for property blobCol in query SV_GetLoggedInIdByPkId")
-    @RequestMapping(value = "/queries/SV_GetLoggedInIdByPkId/content/blobCol", method = RequestMethod.GET, produces = "application/octet-stream")
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Downloadable getBlobColContentForSV_GetLoggedInIdByPkId(@RequestParam(value="downloadAsAttachment", defaultValue = "false") boolean downloadAsAttachment, HttpServletRequest _request) {
-        LOGGER.debug("Executing named query: SV_GetLoggedInIdByPkId");
-
-        InputStream _result = queryService.getBlobColContentForSV_GetLoggedInIdByPkId();
-        return WMMultipartUtils.buildDownloadResponse(_request, _result, downloadAsAttachment);
-    }
-
-    @RequestMapping(value = "/queries/SV_InsertQuery", method = RequestMethod.POST)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "Insert Query")
-    public IntegerWrapper executeSV_InsertQuery(@Valid @RequestBody SvInsertQueryRequest svInsertQueryRequest, HttpServletRequest _request) {
-        LOGGER.debug("Executing named query: SV_InsertQuery");
-        Integer _result = queryService.executeSV_InsertQuery(svInsertQueryRequest);
-        LOGGER.debug("got the result for named query: SV_InsertQuery, result:{}", _result);
-        return new IntegerWrapper(_result);
-    }
-
+    @JsonView(BlobAsUrlView.class)
     @RequestMapping(value = "/queries/SV_AllTypesWithoutSpace", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "AllTypesWithoutSpace")
@@ -216,6 +184,45 @@ public class QueryExecutionController {
         return queryService.exportSV_AllTypesWithoutSpace(exportType, pageable);
     }
 
+    @RequestMapping(value = "/queries/SV_InsertQuery", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "Insert Query")
+    public IntegerWrapper executeSV_InsertQuery(@Valid @RequestBody SvInsertQueryRequest svInsertQueryRequest, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: SV_InsertQuery");
+        Integer _result = queryService.executeSV_InsertQuery(svInsertQueryRequest);
+        LOGGER.debug("got the result for named query: SV_InsertQuery, result:{}", _result);
+        return new IntegerWrapper(_result);
+    }
+
+    @JsonView(BlobAsUrlView.class)
+    @RequestMapping(value = "/queries/SV_GetLoggedInIdByPkId", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "GetLoggedInIdByPkId")
+    public SvGetLoggedInIdByPkIdResponse executeSV_GetLoggedInIdByPkId(HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: SV_GetLoggedInIdByPkId");
+        SvGetLoggedInIdByPkIdResponse _result = queryService.executeSV_GetLoggedInIdByPkId();
+        LOGGER.debug("got the result for named query: SV_GetLoggedInIdByPkId, result:{}", _result);
+        UriComponentsBuilder _uriBuilder = ServletUriComponentsBuilder.fromRequest(_request);
+        _uriBuilder.path("/content/{_fieldName_}");
+        if(_result.getBlobCol() != null) {
+            _result.setBlobCol(_uriBuilder.buildAndExpand(Collections.singletonMap("_fieldName_", "blobCol")).toUriString().getBytes());
+        } else {
+            _result.setBlobCol(null);
+        }
+        return _result;
+    }
+
+    @ApiOperation(value = "Retrives the BLOB content for property blobCol in query SV_GetLoggedInIdByPkId")
+    @RequestMapping(value = "/queries/SV_GetLoggedInIdByPkId/content/blobCol", method = RequestMethod.GET, produces = "application/octet-stream")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Downloadable getBlobColContentForSV_GetLoggedInIdByPkId(@RequestParam(value="downloadAsAttachment", defaultValue = "false") boolean downloadAsAttachment, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: SV_GetLoggedInIdByPkId");
+
+        InputStream _result = queryService.getBlobColContentForSV_GetLoggedInIdByPkId();
+        return WMMultipartUtils.buildDownloadResponse(_request, _result, downloadAsAttachment);
+    }
+
+    @JsonView(BlobAsUrlView.class)
     @RequestMapping(value = "/queries/SV_GetByLoggedInId", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "Get By IoggedInId")

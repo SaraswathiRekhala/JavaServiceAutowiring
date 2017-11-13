@@ -7,6 +7,8 @@ package com.javaserviceautowiring.dbscenarios.service;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -31,7 +33,7 @@ public interface AllTypesWithoutSpaceService {
      * @param allTypesWithoutSpace Details of the AllTypesWithoutSpace to be created; value cannot be null.
      * @return The newly created AllTypesWithoutSpace.
      */
-	AllTypesWithoutSpace create(AllTypesWithoutSpace allTypesWithoutSpace);
+	AllTypesWithoutSpace create(@Valid AllTypesWithoutSpace allTypesWithoutSpace);
 
 
 	/**
@@ -61,7 +63,7 @@ public interface AllTypesWithoutSpaceService {
 	 * @return The updated AllTypesWithoutSpace.
 	 * @throws EntityNotFoundException if no AllTypesWithoutSpace is found with given input.
 	 */
-	AllTypesWithoutSpace update(AllTypesWithoutSpace allTypesWithoutSpace) throws EntityNotFoundException;
+	AllTypesWithoutSpace update(@Valid AllTypesWithoutSpace allTypesWithoutSpace) throws EntityNotFoundException;
 
     /**
 	 * Deletes an existing AllTypesWithoutSpace with the given id.

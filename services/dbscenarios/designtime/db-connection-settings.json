@@ -1,13 +1,13 @@
 {
   "username" : "root",
   "password" : "7b6a43524a322c0c6e6166771a1378700d662158",
-  "url" : "jdbc:mysql://52.12.219.254:3306/dbscenarios?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull",
+  "url" : "jdbc:mysql://54.189.223.203:3306/dbscenarios?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull",
   "driverClass" : "com.mysql.jdbc.Driver",
   "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
   "serviceId" : "dbscenarios",
   "packageName" : "com.javaserviceautowiring.dbscenarios",
   "dbType" : "MySQL",
-  "host" : "52.12.219.254",
+  "host" : "54.189.223.203",
   "dbName" : "dbscenarios",
   "port" : "3306",
   "schemaName" : null,
@@ -38,9 +38,9 @@
   "dataSourceType" : "WM_MANAGED_DATASOURCE",
   "jndiName" : "",
   "reloadInfo" : {
-    "reload" : true,
-    "reason" : "MIGRATION_FAILED",
-    "message" : "Source code re-generation needed with respect to spring upgrade"
+    "reload" : false,
+    "reason" : null,
+    "message" : null
   },
   "readOnly" : true
 }

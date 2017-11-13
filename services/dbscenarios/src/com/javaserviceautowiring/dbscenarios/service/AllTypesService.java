@@ -7,6 +7,8 @@ package com.javaserviceautowiring.dbscenarios.service;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -31,7 +33,7 @@ public interface AllTypesService {
      * @param allTypes Details of the AllTypes to be created; value cannot be null.
      * @return The newly created AllTypes.
      */
-	AllTypes create(AllTypes allTypes);
+	AllTypes create(@Valid AllTypes allTypes);
 
 
 	/**
@@ -61,7 +63,7 @@ public interface AllTypesService {
 	 * @return The updated AllTypes.
 	 * @throws EntityNotFoundException if no AllTypes is found with given input.
 	 */
-	AllTypes update(AllTypes allTypes) throws EntityNotFoundException;
+	AllTypes update(@Valid AllTypes allTypes) throws EntityNotFoundException;
 
     /**
 	 * Deletes an existing AllTypes with the given id.

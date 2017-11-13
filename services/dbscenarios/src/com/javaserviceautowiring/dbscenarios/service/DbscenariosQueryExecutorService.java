@@ -19,29 +19,29 @@ import com.javaserviceautowiring.dbscenarios.models.query.*;
 
 public interface DbscenariosQueryExecutorService {
 
-    Integer executeSV_InsertWithBlob(SvInsertWithBlobRequest svInsertWithBlobRequest);
-
     Page<SvGetAllTypesResponse> executeSV_GetAllTypes(Pageable pageable);
 
     InputStream getBlobColContentForSV_GetAllTypes(Integer pkId) throws EntityNotFoundException;
 
     Downloadable exportSV_GetAllTypes(ExportType exportType, Pageable pageable);
 
+    Integer executeSV_InsertWithBlob(SvInsertWithBlobRequest svInsertWithBlobRequest);
+
     SvGetAllTypesSingleResponse executeSV_GetAllTypesSingle();
 
     InputStream getBlobColContentForSV_GetAllTypesSingle() throws EntityNotFoundException;
-
-    SvGetLoggedInIdByPkIdResponse executeSV_GetLoggedInIdByPkId();
-
-    InputStream getBlobColContentForSV_GetLoggedInIdByPkId() throws EntityNotFoundException;
-
-    Integer executeSV_InsertQuery(SvInsertQueryRequest svInsertQueryRequest);
 
     Page<SvAllTypesWithoutSpaceResponse> executeSV_AllTypesWithoutSpace(Pageable pageable);
 
     InputStream getBlobcolContentForSV_AllTypesWithoutSpace(Integer pkid) throws EntityNotFoundException;
 
     Downloadable exportSV_AllTypesWithoutSpace(ExportType exportType, Pageable pageable);
+
+    Integer executeSV_InsertQuery(SvInsertQueryRequest svInsertQueryRequest);
+
+    SvGetLoggedInIdByPkIdResponse executeSV_GetLoggedInIdByPkId();
+
+    InputStream getBlobColContentForSV_GetLoggedInIdByPkId() throws EntityNotFoundException;
 
     Page<SvGetByLoggedInIdResponse> executeSV_GetByLoggedInId(Pageable pageable);
 

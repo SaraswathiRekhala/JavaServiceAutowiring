@@ -7,17 +7,9 @@ package com.javaserviceautowiring.dbscenarios.models.procedure;
 
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.sql.Date;
-import java.sql.Time;
-import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
 
-import org.joda.time.LocalDateTime;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import com.wavemaker.runtime.data.annotations.ColumnAlias;
 
 public class ProcedureGetAllTypesWithAliasesInsertQueryWithSysParamsResponse implements Serializable {
